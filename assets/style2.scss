@@ -1,0 +1,535 @@
+//colors
+$white-color: white;
+$light-grey: #ccd3d9;
+$medium-grey: #384d59;
+$dark-grey: #142426;
+$green-grey: #496b73;
+$semilight-grey: #8d9fa6;
+
+
+@mixin starbkground {
+    height: 100vh;
+    background-image: url(images/universe.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+
+    .transBack{
+        position: relative;
+        width: 100%;
+        height: 35vh;
+        background-color: rgba(255, 255, 255, .45);
+    }
+
+    svg, .mauiHook{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 6vh;
+    }
+
+    .headliner{
+        position: relative;
+        top: -1.5em;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img{
+            display: block;
+        }
+
+        .top{
+            position: relative;
+            left: 500px;
+        }
+
+        .bottom{
+            position: relative;
+            left: -500px;
+        }
+
+        :nth-child(2){
+            margin-top: -.11em;
+        }
+
+        p{
+            color: $white-color;
+            font-size: .8em;
+            display: block;
+            // margin: 0 auto;
+            font-weight: 400;
+            letter-spacing: .15em;
+            text-align: left;
+            width: 21em;
+        }
+    }
+}
+
+@mixin buttons {
+    width: 17em;
+    font-size: 1em;
+    padding: .5em 2em;
+    border-radius: 1em;
+    background-color: rgba($color: $white-color, $alpha: .45);
+    color: $white-color;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+@mixin card-property {
+    position: absolute;
+    left: 50%;
+    background-color: white;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style-type: none;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper{
+    position: relative;
+    top: 0;
+    display: block;
+    // overflow: hidden;
+
+    //Section 1-------------------------------
+    #splashScreen{
+        @include starbkground;
+        position: relative;
+        z-index: 10;
+
+        .goBack{
+            position: absolute;
+            top: .5em;
+            right: .5em;
+            opacity: 0;
+
+            i{
+                font-size: 3em;
+                z-index: 100;
+                padding: .2em;
+                color: rgba(255, 255, 255, .6);
+            }
+        }
+
+        svg{
+
+            path{
+                stroke-dasharray: 565;
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .callToAction{
+            display: flex;
+        }
+
+        #buttonsSocial{
+            flex: 1 0 100%;
+            padding-top: 10vh;
+            opacity: 1;
+
+            .buttons{
+
+                button{
+                    @include buttons;
+                    position: relative;
+                    display: block;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 5vh;
+                }
+            }
+
+            p{
+                color: $white-color;
+                text-align: center;
+                font-size: 1.5em;
+                font-weight: 300;
+                margin: 4vh;
+            }
+
+            .social{
+                text-align: center;
+
+                i{
+                    color: $white-color;
+                    font-size: 2em;
+                    padding: 0 .5em;
+                }
+            }
+        }
+
+        #signUp, #logIn{
+            flex: 1 0 100%;
+            padding-top: 2vh;
+            opacity: 1;
+    
+            .formBlock{
+                width: 17em;
+                margin: 0 auto;
+            }
+
+            form{
+                padding-top: 2em;
+            }
+
+            h2{
+                color: $white-color;
+                letter-spacing: .15em;
+                padding: 1em 0 0 0;
+                text-transform: uppercase;
+            }
+
+            h3{
+                color: $white-color;
+                font-size: 1em;
+                font-weight: 300;
+                letter-spacing: .08em;
+            }
+
+            p{
+                color: rgba($color: $white-color, $alpha: .45);
+                text-align: center;
+                margin-top: 1em;
+
+                span{
+                    color: $white-color;
+                    cursor: pointer;
+                    margin-left: .5em;
+                }
+            }
+
+            form{
+                width: 17em;
+                margin: 0 auto;
+
+                .formGroup{
+                    font-size: 2em;
+    
+                    input{
+                        background-color: rgba(255, 255, 255, 0);
+                        font-size: .7em;
+                        width: 100%;
+                        padding: .2em .8em;
+                        box-sizing: border-box;
+                        border-bottom: 1px solid rgba(255, 255, 255, .3);
+                        color: $white-color;
+                        margin: .5em 0;
+    
+                        &:focus{
+                            color: $white-color;
+                            outline: none;
+                        }
+                    }
+    
+                    ::placeholder{
+                        color: rgba(255, 255, 255, .35);
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .LogIn, .SignUp{
+                @include buttons;
+                margin: 3em auto 0 auto;
+            }
+        }
+    }
+
+
+    //Section 2-------------------------------
+    #section2{
+        position: relative;
+        z-index: 11;
+        background-color: $white-color;
+        width: 100%;
+        height: 100vh;
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1em;
+            box-sizing: border-box;
+            background-color: $dark-grey;
+            height: 7vh;
+
+            h2{
+                font-weight: 300;
+                color: $white-color;
+
+                span{
+                    color: $medium-grey;
+                }
+            }
+
+            .pic{
+                width: 5vh;
+                height: 5vh;
+                border-radius: 50%;
+                background-color: $semilight-grey;
+            }
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1em;
+            
+            h1{
+                font-weight: 700;
+                letter-spacing: .2em;
+                font-size: 2em;
+                margin-bottom: .25em;
+            }
+
+            //Carousell--------------------------------------------------
+            .card-container {
+                width: 100vw;
+                height: 25vh;
+                padding: 0 5vw;
+                box-sizing: border-box;
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+        
+                .fa-chevron-left, .fa-chevron-right {
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 3em;
+                    color: $dark-grey;
+                }
+        
+                .card-content {
+                    width: 8em;
+                    height: 8em;
+                    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    align-items: center;
+                    text-align: center; 
+        
+                    .card-image{
+                        width: 100%;
+                        font-size: 2em;
+                        font-weight: 300;                            
+                    }
+        
+        
+                }
+        
+                .card1 {
+                    @include card-property;
+                    background-image: url('images/NZ\ North_North.svg');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-color: $green-grey;
+                    color: $light-grey;
+                }
+        
+                .card2 {
+                    @include card-property;
+                    background-color: $dark-grey;
+                    color: $light-grey;
+                }
+        
+                .card3 {
+                    @include card-property;
+                    background-color: $medium-grey;
+                    color: $light-grey;
+                }
+        
+                .card4 {
+                    @include card-property;
+                    background-image: url('images/NZ\ South_South.svg');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-color: $green-grey;
+                    color: $light-grey;
+                }
+        
+                .top {
+                    transform: translateX(-50%) scale(1.3);
+                    z-index: 0;
+                    transition: all 0.25s;
+                }
+        
+                .left {
+                    transform: translateX(-15%);
+                    z-index: -1;
+                    transition: all 0.25s;
+                }
+        
+                .right {
+                    transform: translateX(-85%);
+                    z-index: -1;
+                    transition: all 0.25s;
+                }
+        
+                .back {
+                    transform: translateX(-50%);
+                    z-index: -2;
+                    transition: all 0.25s;
+                }
+            }
+
+
+
+            //Range slider----------------------------
+            .range-wrap{
+                position: relative;
+                width: 70vw;
+                margin-bottom: 4em;
+
+                input[type=range] {
+                    -webkit-appearance: none;
+                    width: 100%;
+                    border-radius: 1em;
+                    height: 5vh;
+                    background: $light-grey;
+                    outline: none;
+                }
+
+                input[type='range']::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    position: relative;
+                    width: 5.5em;
+                    height: 8em;
+                    margin-top: 3em;
+                    background: url('images/Nights.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                .range-value{
+                    position: relative;
+                    z-index: 10;
+                    bottom: -3.8em;
+                    width: 1.62em;
+                    text-align: center;
+                    color: $dark-grey;
+                    font-size: 1.5em;
+                }
+
+            }
+
+
+            h2{
+                width: 80vw;
+                font-size: 1em;
+                font-weight: 300;
+                text-align: center;
+                margin-top: 1em;
+            }
+
+            //Swiper-------------------------
+            .swiper-container {
+                width: 20vw;
+                height: 10vh;
+                margin-top: 1em;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 2em;
+                background: $light-grey;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+        }
+
+        h6{
+            font-weight: 300;
+            display: flex;
+            flex-direction: column;
+
+
+            i{
+                font-size: 3em;
+                text-align: right;
+                color: $dark-grey;
+            }
+        }
+
+        button{
+            @include buttons;
+            position: fixed;
+            bottom: 5vh;
+            background-color: $dark-grey;
+            margin-top: 5vh;
+        }
+    }
+
+
+    //Section 3---------------------------------------
+    #section3{
+        position: relative;
+        z-index: 12;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(160, 156, 156);
+
+        header{
+            height: 4em;
+
+            h2{
+            color: $dark-grey;
+            font-weight: 300;
+            position: relative;
+            z-index: 10;
+            }
+        }
+
+        .contentIntro {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+
+            .shape {
+                height: 80vh;
+
+                position: relative;
+                top: 0;
+                display: block;
+                fill: $white-color;
+            }
+        }
+    }
+}
