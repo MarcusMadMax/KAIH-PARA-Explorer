@@ -160,11 +160,11 @@ $(function () {
         duration: 5500
     })
 
-    slideUp.add({
-        targets: ('.contentIntro'),
-        translateY: '-100vh',
-        duration: 5600
-    },'+3410')
+    // slideUp.add({
+    //     targets: ('.contentIntro'),
+    //     translateY: '-100vh',
+    //     duration: 5600
+    // },'+3410')
 
         $('.explore').on('click', function () {
             slideUp.play()
