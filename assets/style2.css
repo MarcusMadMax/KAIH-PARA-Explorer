@@ -543,7 +543,7 @@ section {
 .wrapper #section3 {
   position: relative;
   z-index: 12;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #ccd3d9;
 }
@@ -553,12 +553,54 @@ section {
 }
 
 .wrapper #section3 header h2 {
-  color: #142426;
   font-size: 2em;
   font-weight: 700;
   position: relative;
   z-index: 10;
   text-align: center;
+}
+
+.wrapper #section3 header h2 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color: #142426;
+  letter-spacing: .2em;
+  border-radius: .25em;
+}
+
+.wrapper #section3 .accomodations {
+  width: 90vw;
+  height: 50vh;
+  margin: 20vh auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  position: relative;
+  z-index: 10;
+}
+
+.wrapper #section3 .accomodations div {
+  width: 8em;
+  height: 8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #8d9fa6;
+  color: #142426;
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
 .wrapper #section3 .contentIntro {

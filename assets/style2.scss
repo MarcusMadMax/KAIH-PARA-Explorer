@@ -501,7 +501,7 @@ section{
     #section3{
         position: relative;
         z-index: 12;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         background-color: $light-grey;
 
@@ -509,12 +509,44 @@ section{
             padding-top: 2em ;
 
             h2{
-            color: $dark-grey;
-            font-size: 2em;
-            font-weight: 700;
+                font-size: 2em;
+                font-weight: 700;
+                position: relative;
+                z-index: 10;
+                text-align: center;
+
+                .letter {
+                    display: inline-block;
+                    line-height: 1em;
+                    color: $dark-grey;
+                    // background-color: rgba($color: $light-grey, $alpha: 1);
+                    letter-spacing: .2em;
+                    border-radius: .25em;
+                }
+            }
+        }
+
+        .accomodations{
+            width: 90vw;
+            height: 50vh;
+            margin: 20vh auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
             position: relative;
             z-index: 10;
-            text-align: center;
+
+            div{
+                width: 8em;
+                height: 8em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $semilight-grey;
+                color: $dark-grey;
+                font-size: 1.2em;
+                font-weight: 700;
             }
         }
 
