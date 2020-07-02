@@ -122,7 +122,6 @@ $semilight-grey: #8d9fa6;
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    overflow: hidden;
 }
 
 section{
@@ -135,11 +134,11 @@ section{
 
 .wrapper{
     position: relative;
-    top: 0;
-    display: block;
-    // overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-    //Section 1-------------------------------
+    //Section 1---------------------------------------
     #splashScreen{
         @include starbkground;
         position: relative;
@@ -217,10 +216,6 @@ section{
                 margin: 0 auto;
             }
 
-            form{
-                padding-top: 2em;
-            }
-
             h2{
                 color: $white-color;
                 letter-spacing: .15em;
@@ -285,13 +280,11 @@ section{
     }
 
 
-    //Section 2-------------------------------
+    //Section 2---------------------------------------
     #section2{
         position: relative;
         z-index: 11;
         background-color: $white-color;
-        width: 100%;
-        height: 100vh;
 
         header{
             @include genericHeader;
@@ -503,6 +496,8 @@ section{
     //Section 3---------------------------------------
     #section3{
         position: relative;
+        width: 100vw;
+        height: 100vh;
         z-index: 12;
         display: flex;
 
@@ -537,7 +532,9 @@ section{
                 position: relative;
                 width: 100vw;
                 height: 50vh;
-                margin: 20vh auto;
+                margin: 20vh 0;
+                padding: 0 2em;
+                box-sizing: border-box;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
@@ -555,11 +552,12 @@ section{
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: contain;
+                    opacity: .25;
 
                     &.selectable{
                         background-color: $dark-grey;
-                        color: $light-grey;
-                        color: red;
+                        // color: $light-grey;
+                        opacity: 1;
                     }
 
                     &.selected{
@@ -599,6 +597,7 @@ section{
         }
 
         .container{
+            background-color: $white-color;
 
             header{
                 @include genericHeader;
@@ -609,8 +608,45 @@ section{
                 font-size: 2em;
                 text-align: center;
             }
+
+            p{
+               color: $dark-grey;
+               font-weight: 300;
+               width: 80vw;
+               margin: 0 auto;
+               border: 1px solid red;
+            }
+        }
+
+
+    }
+    .toHotel{
+        position: relative;
+        left: -100%;
+    }
+    .toHostel{
+        position: relative;
+        left: -200%;
+    }
+    .toMotel{
+        position: relative;
+        left: -300%;
+    }
+    .toHouse{
+        position: relative;
+        left: -400%;
+    }
+
+    //Section 4---------------------------------------
+    #section4{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+
+        header{
+            @include genericHeader;
+            width: 100vw;
         }
     }
 }
-
-
