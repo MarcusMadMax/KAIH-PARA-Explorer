@@ -86,6 +86,32 @@ $semilight-grey: #8d9fa6;
     background-color: white;
 }
 
+@mixin genericHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    box-sizing: border-box;
+    background-color: $dark-grey;
+    height: 7vh;
+
+    h2{
+        font-weight: 300;
+        color: $white-color;
+
+        span{
+            color: $medium-grey;
+        }
+    }
+
+    .pic{
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        background-color: $semilight-grey;
+    }
+}
+
 
 *{
     padding: 0;
@@ -268,29 +294,7 @@ section{
         height: 100vh;
 
         header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1em;
-            box-sizing: border-box;
-            background-color: $dark-grey;
-            height: 7vh;
-
-            h2{
-                font-weight: 300;
-                color: $white-color;
-
-                span{
-                    color: $medium-grey;
-                }
-            }
-
-            .pic{
-                width: 5vh;
-                height: 5vh;
-                border-radius: 50%;
-                background-color: $semilight-grey;
-            }
+            @include genericHeader;
         }
 
         main{
@@ -441,7 +445,6 @@ section{
 
 
             h2{
-                width: 80vw;
                 font-size: 1em;
                 font-weight: 300;
                 text-align: center;
@@ -501,67 +504,113 @@ section{
     #section3{
         position: relative;
         z-index: 12;
-        width: 100vw;
-        height: 100vh;
-        background-color: $light-grey;
+        display: flex;
 
-        header{
-            padding-top: 2em ;
+        .container1{
+            position: relative;
+            width: 100vw;
+            z-index: 5;
+            background-color: $light-grey;
 
-            h2{
-                font-size: 2em;
-                font-weight: 700;
+            header{
+                padding-top: 2em ;
+
+                h2{
+                    font-size: 2em;
+                    font-weight: 700;
+                    position: relative;
+                    z-index: 10;
+                    text-align: center;
+
+                    .letter {
+                        display: inline-block;
+                        line-height: 1em;
+                        color: $dark-grey;
+                        // background-color: rgba($color: $light-grey, $alpha: 1);
+                        letter-spacing: .2em;
+                        border-radius: .25em;
+                    }
+                }
+            }
+
+            .accomodations{
                 position: relative;
+                width: 100vw;
+                height: 50vh;
+                margin: 20vh auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-content: space-around;
                 z-index: 10;
-                text-align: center;
 
-                .letter {
-                    display: inline-block;
-                    line-height: 1em;
-                    color: $dark-grey;
-                    // background-color: rgba($color: $light-grey, $alpha: 1);
-                    letter-spacing: .2em;
-                    border-radius: .25em;
+                div{
+                    width: 8em;
+                    height: 8em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $semilight-grey;
+                    background-image: url(images/HOtel2.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    &.selectable{
+                        background-color: $dark-grey;
+                        color: $light-grey;
+                        color: red;
+                    }
+
+                    &.selected{
+                        background-color: red;
+                    }
+
+                    p{
+                        color: $white-color;
+                        font-size: 2em;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            h4{
+                border: 1px solid red;
+                position: relative;
+                bottom: 2em;
+                text-transform: uppercase;
+                font-size: 1.5em;
+            }
+
+            .contentIntro {
+                position: absolute;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                .shape {
+                    height: 40vh;
+                    position: relative;
+                    top: 0;
+                    fill: $white-color;
                 }
             }
         }
 
-        .accomodations{
-            width: 90vw;
-            height: 50vh;
-            margin: 20vh auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-content: space-around;
-            position: relative;
-            z-index: 10;
+        .container{
 
-            div{
-                width: 8em;
-                height: 8em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $semilight-grey;
-                color: $dark-grey;
-                font-size: 1.2em;
-                font-weight: 700;
+            header{
+                @include genericHeader;
+                width: 100vw;
             }
-        }
 
-        .contentIntro {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-
-            .shape {
-                height: 40vh;
-                position: relative;
-                top: 0;
-                fill: $white-color;
+            h3{
+                font-size: 2em;
+                text-align: center;
             }
         }
     }
 }
+
+

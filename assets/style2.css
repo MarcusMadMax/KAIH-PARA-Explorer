@@ -478,7 +478,6 @@ section {
 }
 
 .wrapper #section2 main h2 {
-  width: 80vw;
   font-size: 1em;
   font-weight: 300;
   text-align: center;
@@ -543,16 +542,23 @@ section {
 .wrapper #section3 {
   position: relative;
   z-index: 12;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper #section3 .container1 {
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  z-index: 5;
   background-color: #ccd3d9;
 }
 
-.wrapper #section3 header {
+.wrapper #section3 .container1 header {
   padding-top: 2em;
 }
 
-.wrapper #section3 header h2 {
+.wrapper #section3 .container1 header h2 {
   font-size: 2em;
   font-weight: 700;
   position: relative;
@@ -560,7 +566,7 @@ section {
   text-align: center;
 }
 
-.wrapper #section3 header h2 .letter {
+.wrapper #section3 .container1 header h2 .letter {
   display: inline-block;
   line-height: 1em;
   color: #142426;
@@ -568,8 +574,9 @@ section {
   border-radius: .25em;
 }
 
-.wrapper #section3 .accomodations {
-  width: 90vw;
+.wrapper #section3 .container1 .accomodations {
+  position: relative;
+  width: 100vw;
   height: 50vh;
   margin: 20vh auto;
   display: -webkit-box;
@@ -581,11 +588,10 @@ section {
       justify-content: space-around;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  position: relative;
   z-index: 10;
 }
 
-.wrapper #section3 .accomodations div {
+.wrapper #section3 .container1 .accomodations div {
   width: 8em;
   height: 8em;
   display: -webkit-box;
@@ -598,22 +604,87 @@ section {
       -ms-flex-align: center;
           align-items: center;
   background-color: #8d9fa6;
-  color: #142426;
-  font-size: 1.2em;
+  background-image: url(images/HOtel2.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.wrapper #section3 .container1 .accomodations div.selectable {
+  background-color: #142426;
+  color: #ccd3d9;
+  color: red;
+}
+
+.wrapper #section3 .container1 .accomodations div.selected {
+  background-color: red;
+}
+
+.wrapper #section3 .container1 .accomodations div p {
+  color: white;
+  font-size: 2em;
   font-weight: 700;
 }
 
-.wrapper #section3 .contentIntro {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
+.wrapper #section3 .container1 h4 {
+  border: 1px solid red;
+  position: relative;
+  bottom: 2em;
+  text-transform: uppercase;
+  font-size: 1.5em;
 }
 
-.wrapper #section3 .contentIntro .shape {
+.wrapper #section3 .container1 .contentIntro {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wrapper #section3 .container1 .contentIntro .shape {
   height: 40vh;
   position: relative;
   top: 0;
   fill: white;
+}
+
+.wrapper #section3 .container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #142426;
+  height: 7vh;
+  width: 100vw;
+}
+
+.wrapper #section3 .container header h2 {
+  font-weight: 300;
+  color: white;
+}
+
+.wrapper #section3 .container header h2 span {
+  color: #384d59;
+}
+
+.wrapper #section3 .container header .pic {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  background-color: #8d9fa6;
+}
+
+.wrapper #section3 .container h3 {
+  font-size: 2em;
+  text-align: center;
 }
 /*# sourceMappingURL=style2.css.map */

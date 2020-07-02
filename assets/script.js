@@ -175,6 +175,26 @@ $(function () {
 
     $('.explore').on('click', function () {
         slideUp.play()
+
+        //show sutiable options
+        if(iPeople <= 2 && iNights <= 5){
+            $('.hotel').addClass('selectable')
+        }
+
+        //show sutiable options
+        if(iPeople == 1 && iNights <= 10){
+            $('.hostel').addClass('selectable')
+        }
+
+        //show sutiable options
+        if(iPeople >= 2 && iPeople <= 4 && iNights >= 3 && iNights <= 10){
+            $('.motel').addClass('selectable')
+        }
+
+        //show sutiable options
+        if(iPeople <= 4 && iNights >=2 && iNights <= 15){
+            $('.house').addClass('selectable')
+        }
     })
 
 
@@ -305,8 +325,23 @@ const
 document.addEventListener("DOMContentLoaded", setValue);
 range.addEventListener('input', setValue);
 
+
+
 //People Swiper-----------------------------------------------
 var swiper = new Swiper('.swiper-container')
 swiper.on('slideChangeTransitionEnd', function () {
     iPeople = parseInt(document.querySelector('.swiper-slide-active').innerHTML)
 })
+
+
+var accom = document.querySelector('.accomodations').children
+
+// function greyOut(){
+//     if(iPeople == 1){
+//         accom.addClass('')
+//     }
+// }
+
+
+// var explore = document.querySelector('.explore')
+// explore.addEventListener('click',greyOut)
