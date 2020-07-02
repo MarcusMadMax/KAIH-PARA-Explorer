@@ -21,7 +21,6 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper #splashScreen {
@@ -625,14 +624,6 @@ section {
   font-weight: 700;
 }
 
-.wrapper #section3 .container1 h4 {
-  border: 1px solid red;
-  position: relative;
-  bottom: 2em;
-  text-transform: uppercase;
-  font-size: 1.5em;
-}
-
 .wrapper #section3 .container1 .contentIntro {
   position: absolute;
   z-index: 5;
@@ -646,6 +637,25 @@ section {
   position: relative;
   top: 0;
   fill: white;
+}
+
+.wrapper #section3 .container1 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 2em 0;
+  background-color: #384d59;
+}
+
+.wrapper #section3 .container1 footer p {
+  color: #142426;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.wrapper #section3 .container1 footer p span {
+  color: white;
+  text-transform: uppercase;
 }
 
 .wrapper #section3 .container {
@@ -696,7 +706,6 @@ section {
   font-weight: 300;
   width: 80vw;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 .wrapper .toHotel {

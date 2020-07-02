@@ -187,24 +187,6 @@ $(function () {
 
 
 
-    //Confirmation for for entries-----------------------------
-    // $('.formGroup').validate({
-    //     rules: {
-    //         name: {
-    //             required: true,
-    //             minlength: 3
-    //         },
-    //     },
-    //     messages: {
-    //         username: {
-    //             required: 'Hi yo, fill it out',
-    //             minlength: 'Not enough man'
-    //         }
-    //     }
-    // })
-
-
-
     //Carousell------------------------------------------
     let flag = 0;
 
@@ -274,6 +256,8 @@ $(function () {
         loop: true
     })
 })
+
+
 
 
 //Night Slider counter---------------------------------------
@@ -365,7 +349,7 @@ function checkLetters() {
         // this.nextElementSibling.style.color = 'green'
         // this.nextElementSibling.innerHTML = 'Thanks'
         // this.nextElementSibling.className = 'message-success'
-        isValid = true
+        // isValid = true
     }
     return isValid
 }
