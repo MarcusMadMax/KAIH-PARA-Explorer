@@ -31,7 +31,6 @@ section {
   background-position: center;
   background-size: auto;
   position: relative;
-  width: 100vw;
   z-index: 10;
 }
 
