@@ -64,15 +64,6 @@ $(function () {
         easing: 'easeInOutSine',
         autoplay: false,
     })
-    // $('.LogIn').on('click', function () {
-
-    //     preventDefault()
-    //     if(){
-    //         moveTo2.play()
-    //     }else{
-            
-    //     }
-    // })
 
     var moveSignUp = anime({
         targets: '.callToAction',
@@ -80,9 +71,16 @@ $(function () {
         duration: 1,
         autoplay: false,
     })
+
     $('p span').on('click', function () {
         moveSignUp.play()
     })
+
+    //Inject name-------------------------------------------------------
+    var logInButton = document.querySelector('.LogIn')
+    logInButton.addEventListener('click', getName)
+
+
 
     //Sign up----------------------------------
     var signup = anime.timeline({
@@ -169,49 +167,43 @@ $(function () {
     }, '-=6000')
 
     $('.explore').on('click', function () {
-        
-        //update message
-        // var peopleNum = document.querySelector('.people')
-
-        // if (iPeople == 1 && iNights == 1) {
-        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night'
-        // } else if (iPeople == 1 && iNights > 1) {
-        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' nights'
-        // } else if (iPeople > 1 && iNights == 1) {
-        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' night'
-        // }else{
-        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' nights'
-
-        // }
-        $('.people').html('You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night')
+        if(iPeople == 1 && iNights == 1){
+            $('.people').html('You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night')
+        }else if (iPeople == 1 && iNights > 1){
+            $('.people').html('You added: ' + iPeople + ' person and you will stay for ' + iNights + ' nights')
+        }else if (iPeople > 1 && iNights == 1){
+            $('.people').html('You added: ' + iPeople + ' people and you will stay for ' + iNights + ' night')
+        }else {
+            $('.people').html('You added: ' + iPeople + ' people and you will stay for ' + iNights + ' nights')
+        }
         slideUp.play()
 
         //show sutiable options
         if (iPeople <= 2 && iNights <= 5) {
             $('.hotel').addClass('selectable')//pointer event none if disabelde
-        }else{
-            $('.house').removeClass('selectable')
+        } else {
+            $('.hotel').addClass('nonselectable')
         }
 
         //show sutiable options
         if (iPeople == 1 && iNights <= 10) {
             $('.hostel').addClass('selectable')
-        }else{
-            $('.house').disableSelection()
+        } else {
+            $('.hostel').addClass('nonselectable')
         }
 
         //show sutiable options
         if (iPeople >= 2 && iPeople <= 4 && iNights >= 3 && iNights <= 10) {
             $('.motel').addClass('selectable')
-        }else{
-            $('.house').disableSelection()
+        } else {
+            $('.motel').addClass('nonselectable')
         }
 
         //show sutiable options
         if (iPeople <= 4 && iNights >= 2 && iNights <= 15) {
             $('.house').addClass('selectable')
-        }else{
-            $('.house').disableSelection()
+        } else {
+            $('.house').addClass('nonselectable')
         }
 
     })
@@ -278,15 +270,6 @@ $(function () {
         }
     })
 
-    //People slider caption------------------------------
-    anime({
-        targets: 'h6 .fa-hand-point-up',
-        translateX: -40,
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        direction: 'alternate',
-        loop: true
-    })
 
 
 
@@ -294,18 +277,18 @@ $(function () {
 
     //Night Slider counter---------------------------------------
     const
-    range = document.getElementById('range'),
-    rangeV = document.getElementById('rangeV'),
-    setValue = () => {
-        const
-            newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
-            newPosition = 15 - (newValue * 0.74);
-        rangeV.innerHTML = `<span>${range.value}</span>`;
-        rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`
+        range = document.getElementById('range'),
+        rangeV = document.getElementById('rangeV'),
+        setValue = () => {
+            const
+                newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
+                newPosition = 15 - (newValue * 0.74);
+            rangeV.innerHTML = `<span>${range.value}</span>`;
+            rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`
 
-        iNights = range.value
+            iNights = range.value
 
-    }
+        }
     document.addEventListener("DOMContentLoaded", setValue);
     range.addEventListener('input', setValue);
 
@@ -316,6 +299,16 @@ $(function () {
     swiper.on('slideChangeTransitionEnd', function () {
         iPeople = parseInt(document.querySelector('.swiper-slide-active').innerHTML)
     })
+    //People swiper caption------------------------------
+    anime({
+        targets: 'h6 .fa-hand-point-up',
+        translateX: -40,
+        duration: 1000,
+        easing: 'easeInOutQuad',
+        direction: 'alternate',
+        loop: true
+    })
+
 
 
 
@@ -340,6 +333,17 @@ $(function () {
         document.querySelector('#section3').classList.add('toHouse')
     })
 
+    //Section 3 Slide down-----------------------------------------------------
+    var backTo2 = anime({
+        targets: '#section3',
+        translateY: '100%',
+        duration: 200,
+        autoplay: false
+    })
+    $('.backTo2').on('click',function(){
+        backTo2.play()
+    })
+
 
 
 
@@ -352,11 +356,11 @@ $(function () {
         var oAlphabeticExp = /^[A-Za-z]*$/
         var placeholder = document.querySelector('.username')
         var isValid = false
-        
+
         if (sValue == '') {
             this.style.backgroundColor = 'red'
             placeholder.placeholder = 'Please fill in'
-        }else {
+        } else {
             this.style.backgroundColor = 'green'
 
             isValid = true
@@ -375,7 +379,7 @@ $(function () {
         }
     }
 
-    function getName(){
+    function getName() {
         var sUserName = document.querySelector('.username').value
         $('span.name').html(sUserName)
     }
@@ -388,7 +392,5 @@ $(function () {
     var oForm = document.querySelector('#logIn button')
     oForm.addEventListener('click', checkAll)
 
-    //Inject name-------------------------------------------------------
-    var logInButton = document.querySelector('.LogIn')
-    logInButton.addEventListener('click', getName)
+
 })

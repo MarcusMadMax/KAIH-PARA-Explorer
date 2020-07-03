@@ -93,7 +93,7 @@ $semilight-grey: #8d9fa6;
     padding: 0 1em;
     box-sizing: border-box;
     background-color: $dark-grey;
-    height: 7vh;
+    height: 7em;
 
     h2{
         font-weight: 300;
@@ -113,6 +113,43 @@ $semilight-grey: #8d9fa6;
     }
 }
 
+@mixin accomodationSettings {
+    display: flex;
+    max-height: 10em;
+    margin-top: 2em;
+
+    h3{
+        border: 1px solid red;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    img{
+        width: 50%;
+    }
+
+    .description{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 1em;
+        box-sizing: border-box;
+
+        h3{
+            font-size: 1.2em;
+            color: $dark-grey;
+            margin-bottom: .25em;
+            text-align: left;
+        }
+
+        :nth-child(3){
+            font-size: 1.5em;
+            font-weight: 700;
+            color: $green-grey;
+        }
+    }
+}
+
 
 *{
     padding: 0;
@@ -121,10 +158,6 @@ $semilight-grey: #8d9fa6;
     list-style-type: none;
 }
 
-
-input:focus {
-    outline-offset: 0;
-}
 body{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -296,16 +329,22 @@ section{
         }
 
         main{
+            position: absolute;
+            top: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
             align-items: center;
-            margin-top: 1em;
+            height: 100vh;
+            padding: 4.5em 0 1em 0;
+            box-sizing: border-box;
             
             h1{
                 font-weight: 700;
                 letter-spacing: .2em;
                 font-size: 2em;
-                margin-bottom: .25em;
+                // margin-bottom: .1em;
             }
 
             //Carousell--------------------------------------------------
@@ -407,7 +446,7 @@ section{
             .range-wrap{
                 position: relative;
                 width: 70vw;
-                margin: 3em 0 4em 0;
+                margin: 1.5em 0 4em 0;
 
                 input[type=range] {
                     -webkit-appearance: none;
@@ -423,7 +462,7 @@ section{
                     position: relative;
                     width: 5.5em;
                     height: 8em;
-                    margin-top: 3em;
+                    margin-top: 2em;
                     background: url('images/Nights.png');
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -453,7 +492,7 @@ section{
             .swiper-container {
                 width: 20vw;
                 height: 10vh;
-                margin-top: 1em;
+                // margin-top: em;
             }
 
             .swiper-slide {
@@ -488,12 +527,9 @@ section{
             }
         }
 
-        button{
+        .explore{
             @include buttons;
-            position: fixed;
-            bottom: 5vh;
             background-color: $dark-grey;
-            margin-top: 5vh;
         }
     }
 
@@ -509,7 +545,7 @@ section{
         .container1{
             position: relative;
             width: 100vw;
-            z-index: 5;
+            z-index: 15;
             background-color: $light-grey;
 
             header{
@@ -571,8 +607,8 @@ section{
                         opacity: 1;
                     }
 
-                    &.selected{
-                        background-color: red;
+                    &.nonselectable{
+                        pointer-events: none;
                     }
 
                     p{
@@ -617,65 +653,72 @@ section{
             }
         }
 
-        .container3{
+        .container2{
             position: relative;
             width: 100vw;
-            height: 100vh;
             display: flex;
             flex-direction: column;
-
-            .option1{
-                width: 100%;
-                height: 10em;
-                background-image: url(/assets/Images/Backpacker1.jpg);
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-
-            .option2{
-                background-image: url(/assets/Images/Backpacker1.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            .option3{
-                background-image: url(/assets/Images/Backpacker1.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            .option4{
-                background-image: url(/assets/Images/Backpacker1.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        }
-
-        .container{
-            background-color: $white-color;
+            background-color: $semilight-grey;
+            // overflow: auto;
 
             header{
                 @include genericHeader;
                 width: 100vw;
-            }
 
-            h3{
-                font-size: 2em;
-                text-align: center;
-            }
+                .counter{
+                    position: relative;
+                    z-index: 10;
 
-            .counter{
-                border: 1px solid red;
-                height: 3em;
-                width: 100%;
-
-                p{
-                    color: $dark-grey;
-                    font-weight: 300;
-                    text-align: center;
+                    p{
+                        color: $light-grey;
+                        font-weight: 300;
+                        text-align: center;
+                    }
                 }
             }
+
+            .option1{
+                @include accomodationSettings;
+            }
+
+            .option2{
+                @include accomodationSettings;
+            }
+
+            .option3{
+                @include accomodationSettings;
+            }
+
+            .option4{
+                @include accomodationSettings;
+            }
         }
+
+        // .container{
+        //     background-color: $white-color;
+
+        //     header{
+        //         @include genericHeader;
+        //         width: 100vw;
+        //     }
+
+        //     // h3{
+        //     //     font-size: 2em;
+        //     //     text-align: center;
+        //     // }
+
+        //     .counter{
+        //         height: 3em;
+        //         width: 100%;
+        //         border: 1px solid red;
+
+        //         p{
+        //             color: $dark-grey;
+        //             font-weight: 300;
+        //             text-align: center;
+        //         }
+        //     }
+        // }
 
 
     }
