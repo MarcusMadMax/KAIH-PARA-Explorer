@@ -1,6 +1,8 @@
 var iNights = 1
 var iPeople = 1
 
+// var isLoginFormValid = false
+
 $(function () {
 
     //svg Mauri Hook animation-----------------------
@@ -62,9 +64,15 @@ $(function () {
         easing: 'easeInOutSine',
         autoplay: false,
     })
-    $('.LogIn').on('click', function () {
-        moveTo2.play()
-    })
+    // $('.LogIn').on('click', function () {
+
+    //     preventDefault()
+    //     if(){
+    //         moveTo2.play()
+    //     }else{
+            
+    //     }
+    // })
 
     var moveSignUp = anime({
         targets: '.callToAction',
@@ -161,27 +169,51 @@ $(function () {
     }, '-=6000')
 
     $('.explore').on('click', function () {
+        
+        //update message
+        // var peopleNum = document.querySelector('.people')
+
+        // if (iPeople == 1 && iNights == 1) {
+        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night'
+        // } else if (iPeople == 1 && iNights > 1) {
+        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' nights'
+        // } else if (iPeople > 1 && iNights == 1) {
+        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' night'
+        // }else{
+        //     peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' nights'
+
+        // }
+        $('.people').html('You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night')
         slideUp.play()
 
         //show sutiable options
         if (iPeople <= 2 && iNights <= 5) {
-            $('.hotel').addClass('selectable')
+            $('.hotel').addClass('selectable')//pointer event none if disabelde
+        }else{
+            $('.house').removeClass('selectable')
         }
 
         //show sutiable options
         if (iPeople == 1 && iNights <= 10) {
             $('.hostel').addClass('selectable')
+        }else{
+            $('.house').disableSelection()
         }
 
         //show sutiable options
         if (iPeople >= 2 && iPeople <= 4 && iNights >= 3 && iNights <= 10) {
             $('.motel').addClass('selectable')
+        }else{
+            $('.house').disableSelection()
         }
 
         //show sutiable options
         if (iPeople <= 4 && iNights >= 2 && iNights <= 15) {
             $('.house').addClass('selectable')
+        }else{
+            $('.house').disableSelection()
         }
+
     })
 
 
@@ -255,13 +287,13 @@ $(function () {
         direction: 'alternate',
         loop: true
     })
-})
 
 
 
 
-//Night Slider counter---------------------------------------
-const
+
+    //Night Slider counter---------------------------------------
+    const
     range = document.getElementById('range'),
     rangeV = document.getElementById('rangeV'),
     setValue = () => {
@@ -272,104 +304,91 @@ const
         rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`
 
         iNights = range.value
-        console.log(iNights)
 
     }
-document.addEventListener("DOMContentLoaded", setValue);
-range.addEventListener('input', setValue);
+    document.addEventListener("DOMContentLoaded", setValue);
+    range.addEventListener('input', setValue);
 
 
 
-//People Swiper-----------------------------------------------
-var swiper = new Swiper('.swiper-container')
-swiper.on('slideChangeTransitionEnd', function () {
-    iPeople = parseInt(document.querySelector('.swiper-slide-active').innerHTML)
+    //People Swiper-----------------------------------------------
+    var swiper = new Swiper('.swiper-container')
+    swiper.on('slideChangeTransitionEnd', function () {
+        iPeople = parseInt(document.querySelector('.swiper-slide-active').innerHTML)
+    })
 
-    console.log(iPeople)
-    //Insert number of people and nights in accomodation slides--------------
-    var peopleNum = document.querySelector('.people')
 
-    if (iPeople == 1 && iNights == 1) {
-        peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' night'
-    } else if (iPeople == 1 && iNights > 1) {
-        peopleNum.innerHTML = 'You added: ' + iPeople + ' person and you will stay for ' + iNights + ' nights'
-    } else if (iPeople > 1 && iNights == 1) {
-        peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' night'
-    }else{
-        peopleNum.innerHTML = 'You added: ' + iPeople + ' people and you will stay for ' + iNights + ' nights'
 
+
+
+    //Moving to asinged accomodation slide----------------------------------
+    var toHotel = document.querySelector('.hotel')
+    var toHostel = document.querySelector('.hostel')
+    var toMotel = document.querySelector('.motel')
+    var toHouse = document.querySelector('.house')
+
+    toHotel.addEventListener('click', function () {
+        document.querySelector('#section3').classList.add('toHotel')
+    })
+    toHostel.addEventListener('click', function () {
+        document.querySelector('#section3').classList.add('toHostel')
+    })
+    toMotel.addEventListener('click', function () {
+        document.querySelector('#section3').classList.add('toMotel')
+    })
+    toHouse.addEventListener('click', function () {
+        document.querySelector('#section3').classList.add('toHouse')
+    })
+
+
+
+
+
+
+
+    //Validation of name------------------------------------------------
+    function checkLetters() {
+        var sValue = this.value
+        var oAlphabeticExp = /^[A-Za-z]*$/
+        var placeholder = document.querySelector('.username')
+        var isValid = false
+        
+        if (sValue == '') {
+            this.style.backgroundColor = 'red'
+            placeholder.placeholder = 'Please fill in'
+        }else {
+            this.style.backgroundColor = 'green'
+
+            isValid = true
+        }
+        return isValid
     }
-})
 
 
-
-
-
-//Moving to asinged accomodation slide----------------------------------
-var toHotel = document.querySelector('.hotel')
-var toHostel = document.querySelector('.hostel')
-var toMotel = document.querySelector('.motel')
-var toHouse = document.querySelector('.house')
-
-toHotel.addEventListener('click', function () {
-    document.querySelector('#section3').classList.add('toHotel')
-})
-toHostel.addEventListener('click', function () {
-    document.querySelector('#section3').classList.add('toHostel')
-})
-toMotel.addEventListener('click', function () {
-    document.querySelector('#section3').classList.add('toMotel')
-})
-toHouse.addEventListener('click', function () {
-    document.querySelector('#section3').classList.add('toHouse')
-})
-
-
-
-
-//Validation of name------------------------------------------------
-function checkLetters() {
-    var sValue = this.value
-    var oAlphabeticExp = /^[A-Za-z]*$/
-    var bResult = oAlphabeticExp.test(sValue)
-    var isValid = false
-
-    if (sValue == '') {
-        this.style.backgroundColor = 'red'
-        // this.nextElementSibling.style.color = 'red'
-        this.nextElementSibling.innerHTML = 'Please fill in'
-        // this.nextElementSibling.className = 'message-error'
-    } else if (bResult == false) {
-        this.style.backgroundColor = 'red'
-        // this.nextElementSibling.style.color = 'red'
-        // this.nextElementSibling.innerHTML = 'Only letters'
-        // this.nextElementSibling.className = 'message-error'
-    } else {
-        this.style.backgroundColor = 'green'
-        // this.nextElementSibling.style.color = 'green'
-        // this.nextElementSibling.innerHTML = 'Thanks'
-        // this.nextElementSibling.className = 'message-success'
-        // isValid = true
-    }
-    return isValid
-}
-
-
-function checkAll(e) {
-    e.preventDefault()
-    var isFirstName = checkLetters.call(oFirstName)
-
-    var isAllVaild = isFirstName
-
-    if (isAllVaild == false) {
+    function checkAll(e) {
         e.preventDefault()
+        var isFirstName = checkLetters.call(oFirstName)
+        var isAllVaild = isFirstName
+
+        if (isAllVaild == true) {
+            moveTo2.play()
+        }
     }
-}
+
+    function getName(){
+        var sUserName = document.querySelector('.username').value
+        $('span.name').html(sUserName)
+    }
 
 
 
-var oFirstName = document.querySelector('.username')
-oFirstName.addEventListener('blur', checkLetters)
+    var oFirstName = document.querySelector('.username')
+    oFirstName.addEventListener('blur', checkLetters)
 
-var oForm = document.querySelector('#logIn button')
-oForm.addEventListener('click', checkAll)
+    var oForm = document.querySelector('#logIn button')
+    oForm.addEventListener('click', checkAll)
+
+    //Inject name-------------------------------------------------------
+    var logInButton = document.querySelector('.LogIn')
+    logInButton.addEventListener('click', getName)
+})

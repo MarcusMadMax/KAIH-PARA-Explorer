@@ -100,7 +100,8 @@ $semilight-grey: #8d9fa6;
         color: $white-color;
 
         span{
-            color: $medium-grey;
+            color: $white-color;
+            letter-spacing: .1em;
         }
     }
 
@@ -120,6 +121,10 @@ $semilight-grey: #8d9fa6;
     list-style-type: none;
 }
 
+
+input:focus {
+    outline-offset: 0;
+}
 body{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -402,7 +407,7 @@ section{
             .range-wrap{
                 position: relative;
                 width: 70vw;
-                margin-bottom: 4em;
+                margin: 3em 0 4em 0;
 
                 input[type=range] {
                     -webkit-appearance: none;
@@ -425,9 +430,9 @@ section{
                 }
 
                 .range-value{
-                    position: relative;
-                    z-index: 10;
-                    bottom: -3.8em;
+                    position: absolute;
+                    z-index: 20;
+                    bottom: -1.8em;
                     width: 1.62em;
                     text-align: center;
                     color: $dark-grey;
@@ -508,14 +513,20 @@ section{
             background-color: $light-grey;
 
             header{
-                padding-top: 2em ;
+                padding-top: 2em;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                z-index: 20;
 
                 h2{
                     font-size: 2em;
                     font-weight: 700;
                     position: relative;
-                    z-index: 10;
                     text-align: center;
+
+
 
                     .letter {
                         display: inline-block;
@@ -553,10 +564,10 @@ section{
                     background-repeat: no-repeat;
                     background-size: contain;
                     opacity: .25;
+                    cursor: pointer;
 
                     &.selectable{
                         background-color: $dark-grey;
-                        // color: $light-grey;
                         opacity: 1;
                     }
 
@@ -606,6 +617,40 @@ section{
             }
         }
 
+        .container3{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            .option1{
+                width: 100%;
+                height: 10em;
+                background-image: url(/assets/Images/Backpacker1.jpg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .option2{
+                background-image: url(/assets/Images/Backpacker1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .option3{
+                background-image: url(/assets/Images/Backpacker1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .option4{
+                background-image: url(/assets/Images/Backpacker1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
         .container{
             background-color: $white-color;
 
@@ -619,11 +664,16 @@ section{
                 text-align: center;
             }
 
-            p{
-               color: $dark-grey;
-               font-weight: 300;
-               width: 80vw;
-               margin: 0 auto;
+            .counter{
+                border: 1px solid red;
+                height: 3em;
+                width: 100%;
+
+                p{
+                    color: $dark-grey;
+                    font-weight: 300;
+                    text-align: center;
+                }
             }
         }
 

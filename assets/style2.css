@@ -5,6 +5,10 @@
   list-style-type: none;
 }
 
+input:focus {
+  outline-offset: 0;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -284,7 +288,8 @@ section {
 }
 
 .wrapper #section2 header h2 span {
-  color: #384d59;
+  color: white;
+  letter-spacing: .1em;
 }
 
 .wrapper #section2 header .pic {
@@ -437,7 +442,7 @@ section {
 .wrapper #section2 main .range-wrap {
   position: relative;
   width: 70vw;
-  margin-bottom: 4em;
+  margin: 3em 0 4em 0;
 }
 
 .wrapper #section2 main .range-wrap input[type=range] {
@@ -461,9 +466,9 @@ section {
 }
 
 .wrapper #section2 main .range-wrap .range-value {
-  position: relative;
-  z-index: 10;
-  bottom: -3.8em;
+  position: absolute;
+  z-index: 20;
+  bottom: -1.8em;
   width: 1.62em;
   text-align: center;
   color: #142426;
@@ -551,13 +556,17 @@ section {
 
 .wrapper #section3 .container1 header {
   padding-top: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 20;
 }
 
 .wrapper #section3 .container1 header h2 {
   font-size: 2em;
   font-weight: 700;
   position: relative;
-  z-index: 10;
   text-align: center;
 }
 
@@ -607,6 +616,7 @@ section {
   background-repeat: no-repeat;
   background-size: contain;
   opacity: .25;
+  cursor: pointer;
 }
 
 .wrapper #section3 .container1 .accomodations div.selectable {
@@ -658,6 +668,45 @@ section {
   text-transform: uppercase;
 }
 
+.wrapper #section3 .container3 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper #section3 .container3 .option1 {
+  width: 100%;
+  height: 10em;
+  background-image: url(/assets/Images/Backpacker1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.wrapper #section3 .container3 .option2 {
+  background-image: url(/assets/Images/Backpacker1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper #section3 .container3 .option3 {
+  background-image: url(/assets/Images/Backpacker1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper #section3 .container3 .option4 {
+  background-image: url(/assets/Images/Backpacker1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .wrapper #section3 .container {
   background-color: white;
 }
@@ -686,7 +735,8 @@ section {
 }
 
 .wrapper #section3 .container header h2 span {
-  color: #384d59;
+  color: white;
+  letter-spacing: .1em;
 }
 
 .wrapper #section3 .container header .pic {
@@ -701,11 +751,16 @@ section {
   text-align: center;
 }
 
-.wrapper #section3 .container p {
+.wrapper #section3 .container .counter {
+  border: 1px solid red;
+  height: 3em;
+  width: 100%;
+}
+
+.wrapper #section3 .container .counter p {
   color: #142426;
   font-weight: 300;
-  width: 80vw;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .wrapper .toHotel {
@@ -759,7 +814,8 @@ section {
 }
 
 .wrapper #section4 header h2 span {
-  color: #384d59;
+  color: white;
+  letter-spacing: .1em;
 }
 
 .wrapper #section4 header .pic {
