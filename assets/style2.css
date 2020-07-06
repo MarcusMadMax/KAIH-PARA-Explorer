@@ -294,7 +294,10 @@ section {
 
 .wrapper #section2 header .welcome .back {
   color: white;
-  font-size: 1.25em;
+  background-color: #496b73;
+  padding: .5em 1em;
+  border-radius: .3em;
+  cursor: pointer;
 }
 
 .wrapper #section2 header .counter {
@@ -661,6 +664,18 @@ section {
   fill: white;
 }
 
+.wrapper #section3 .container1 .peopleNights {
+  position: relative;
+  width: 70vw;
+  margin: 0 auto;
+  top: -5em;
+}
+
+.wrapper #section3 .container1 .peopleNights p {
+  font-size: 1.5em;
+  color: #142426;
+}
+
 .wrapper #section3 .container1 footer {
   position: absolute;
   bottom: 0;
@@ -676,6 +691,10 @@ section {
 
 .wrapper #section3 .container1 footer p span {
   color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 .25em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
@@ -723,7 +742,10 @@ section {
 
 .wrapper #section3 .container header .welcome .back {
   color: white;
-  font-size: 1.25em;
+  background-color: #496b73;
+  padding: .5em 1em;
+  border-radius: .3em;
+  cursor: pointer;
 }
 
 .wrapper #section3 .container header .counter {
@@ -759,7 +781,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  overflow-X: hidden;
 }
 
 .wrapper #section3 .container .option1 {
@@ -1016,6 +1038,9 @@ section {
   width: 100%;
   background-color: #496b73;
   border-radius: 1em 1em 0 0;
+  -webkit-transition: all ease-in-out .6s;
+  transition: all ease-in-out .6s;
+  cursor: pointer;
 }
 
 .wrapper #section3 .container .extras h3 {
@@ -1045,6 +1070,11 @@ section {
   padding-bottom: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.wrapper #section3 .container .swipeUp {
+  position: absolute;
+  bottom: 0;
 }
 
 .wrapper #section3 .container footer {
@@ -1135,7 +1165,10 @@ section {
 
 .wrapper #section4 header .welcome .back {
   color: white;
-  font-size: 1.25em;
+  background-color: #496b73;
+  padding: .5em 1em;
+  border-radius: .3em;
+  cursor: pointer;
 }
 
 .wrapper #section4 header .counter {
