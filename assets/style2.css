@@ -1,3 +1,4 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 * {
   padding: 0;
   margin: 0;
@@ -21,6 +22,7 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper #splashScreen {
@@ -262,6 +264,13 @@ section {
 }
 
 .wrapper #section2 header {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #142426;
+}
+
+.wrapper #section2 header .welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,28 +280,32 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #142426;
-  height: 7em;
 }
 
-.wrapper #section2 header h2 {
+.wrapper #section2 header .welcome h2 {
   font-weight: 300;
   color: white;
 }
 
-.wrapper #section2 header h2 span {
+.wrapper #section2 header .welcome h2 span {
   color: white;
   letter-spacing: .1em;
 }
 
-.wrapper #section2 header .pic {
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  background-color: #8d9fa6;
+.wrapper #section2 header .welcome .back {
+  color: white;
+  font-size: 1.25em;
+}
+
+.wrapper #section2 header .counter {
+  position: relative;
+  z-index: 10;
+  width: 60vw;
+}
+
+.wrapper #section2 header .counter p {
+  color: #ccd3d9;
+  font-weight: 300;
 }
 
 .wrapper #section2 main {
@@ -563,7 +576,7 @@ section {
 }
 
 .wrapper #section3 .container1 header h2 {
-  font-size: 2em;
+  font-size: 2.25em;
   font-weight: 700;
   position: relative;
   text-align: center;
@@ -652,13 +665,12 @@ section {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  padding: 2em 0;
-  background-color: #384d59;
+  padding: 1em 0;
+  background-color: #142426;
 }
 
 .wrapper #section3 .container1 footer p {
-  color: #142426;
-  font-size: 1.5em;
+  color: #ccd3d9;
   text-align: center;
 }
 
@@ -667,8 +679,7 @@ section {
   text-transform: uppercase;
 }
 
-.wrapper #section3 .container2 {
-  position: relative;
+.wrapper #section3 .container {
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -680,7 +691,15 @@ section {
   background-color: #8d9fa6;
 }
 
-.wrapper #section3 .container2 header {
+.wrapper #section3 .container header {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #142426;
+  width: 100vw;
+}
+
+.wrapper #section3 .container header .welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -690,224 +709,371 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #142426;
-  height: 7em;
-  width: 100vw;
 }
 
-.wrapper #section3 .container2 header h2 {
+.wrapper #section3 .container header .welcome h2 {
   font-weight: 300;
   color: white;
 }
 
-.wrapper #section3 .container2 header h2 span {
+.wrapper #section3 .container header .welcome h2 span {
   color: white;
   letter-spacing: .1em;
 }
 
-.wrapper #section3 .container2 header .pic {
-  width: 5vh;
-  height: 5vh;
+.wrapper #section3 .container header .welcome .back {
+  color: white;
+  font-size: 1.25em;
+}
+
+.wrapper #section3 .container header .counter {
+  position: relative;
+  z-index: 10;
+  width: 60vw;
+}
+
+.wrapper #section3 .container header .counter p {
+  color: #ccd3d9;
+  font-weight: 300;
+}
+
+.wrapper #section3 .container main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  position: relative;
+}
+
+.wrapper #section3 .container main h3 {
+  margin: 0 auto;
+  padding: .2em 0;
+  width: 90vw;
+  font-size: 3em;
+  color: #142426;
+  font-weight: 700;
+}
+
+.wrapper #section3 .container main .options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.wrapper #section3 .container .option1 {
+  width: 90vw;
+  margin: 0 auto 1.5em auto;
+  border-bottom: 1px solid #142426;
+  padding-bottom: 1em;
+}
+
+.wrapper #section3 .container .option1 .pics {
+  position: relative;
+}
+
+.wrapper #section3 .container .option1 .pics img {
+  position: relative;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.wrapper #section3 .container .option1 .pics p {
+  position: absolute;
+  z-index: 2;
+  top: -1em;
+  right: -1em;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1.25em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 50%;
+  color: #142426;
   background-color: #8d9fa6;
 }
 
-.wrapper #section3 .container2 header .counter {
+.wrapper #section3 .container .option1 .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper #section3 .container .option1 .description h2 {
+  font-size: 1.5em;
+  color: #142426;
+  text-align: left;
+}
+
+.wrapper #section3 .container .option1 .description p {
+  color: #142426;
+}
+
+.wrapper #section3 .container .option1 .description :nth-child(4) {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #496b73;
+  margin-top: .25em;
+}
+
+.wrapper #section3 .container .option2 {
+  width: 90vw;
+  margin: 0 auto 1.5em auto;
+  border-bottom: 1px solid #142426;
+  padding-bottom: 1em;
+}
+
+.wrapper #section3 .container .option2 .pics {
   position: relative;
+}
+
+.wrapper #section3 .container .option2 .pics img {
+  position: relative;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.wrapper #section3 .container .option2 .pics p {
+  position: absolute;
+  z-index: 2;
+  top: -1em;
+  right: -1em;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1.25em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  color: #142426;
+  background-color: #8d9fa6;
+}
+
+.wrapper #section3 .container .option2 .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper #section3 .container .option2 .description h2 {
+  font-size: 1.5em;
+  color: #142426;
+  text-align: left;
+}
+
+.wrapper #section3 .container .option2 .description p {
+  color: #142426;
+}
+
+.wrapper #section3 .container .option2 .description :nth-child(4) {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #496b73;
+  margin-top: .25em;
+}
+
+.wrapper #section3 .container .option3 {
+  width: 90vw;
+  margin: 0 auto 1.5em auto;
+  border-bottom: 1px solid #142426;
+  padding-bottom: 1em;
+}
+
+.wrapper #section3 .container .option3 .pics {
+  position: relative;
+}
+
+.wrapper #section3 .container .option3 .pics img {
+  position: relative;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.wrapper #section3 .container .option3 .pics p {
+  position: absolute;
+  z-index: 2;
+  top: -1em;
+  right: -1em;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1.25em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  color: #142426;
+  background-color: #8d9fa6;
+}
+
+.wrapper #section3 .container .option3 .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper #section3 .container .option3 .description h2 {
+  font-size: 1.5em;
+  color: #142426;
+  text-align: left;
+}
+
+.wrapper #section3 .container .option3 .description p {
+  color: #142426;
+}
+
+.wrapper #section3 .container .option3 .description :nth-child(4) {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #496b73;
+  margin-top: .25em;
+}
+
+.wrapper #section3 .container .option4 {
+  width: 90vw;
+  margin: 0 auto 1.5em auto;
+  border-bottom: 1px solid #142426;
+  padding-bottom: 1em;
+  margin-bottom: 4em;
+  border-bottom: none;
+}
+
+.wrapper #section3 .container .option4 .pics {
+  position: relative;
+}
+
+.wrapper #section3 .container .option4 .pics img {
+  position: relative;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.wrapper #section3 .container .option4 .pics p {
+  position: absolute;
+  z-index: 2;
+  top: -1em;
+  right: -1em;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1.25em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  color: #142426;
+  background-color: #8d9fa6;
+}
+
+.wrapper #section3 .container .option4 .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper #section3 .container .option4 .description h2 {
+  font-size: 1.5em;
+  color: #142426;
+  text-align: left;
+}
+
+.wrapper #section3 .container .option4 .description p {
+  color: #142426;
+}
+
+.wrapper #section3 .container .option4 .description :nth-child(4) {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #496b73;
+  margin-top: .25em;
+}
+
+.wrapper #section3 .container .extras {
+  position: absolute;
   z-index: 10;
+  bottom: -5em;
+  left: 0;
+  width: 100%;
+  background-color: #496b73;
+  border-radius: 1em 1em 0 0;
 }
 
-.wrapper #section3 .container2 header .counter p {
+.wrapper #section3 .container .extras h3 {
   color: #ccd3d9;
-  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: .15em;
   text-align: center;
-}
-
-.wrapper #section3 .container2 .option1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 10em;
-  margin-top: 2em;
-}
-
-.wrapper #section3 .container2 .option1 h3 {
-  border: 1px solid red;
-  font-size: 2em;
-  text-align: center;
-}
-
-.wrapper #section3 .container2 .option1 img {
-  width: 50%;
-}
-
-.wrapper #section3 .container2 .option1 .description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0 1em;
+  padding: .5em 0 1em 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.wrapper #section3 .container2 .option1 .description h3 {
-  font-size: 1.2em;
-  color: #142426;
-  margin-bottom: .25em;
-  text-align: left;
-}
-
-.wrapper #section3 .container2 .option1 .description :nth-child(3) {
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #496b73;
-}
-
-.wrapper #section3 .container2 .option2 {
+.wrapper #section3 .container .extras .extra {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 10em;
-  margin-top: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80vw;
+  margin: 0 auto;
 }
 
-.wrapper #section3 .container2 .option2 h3 {
-  border: 1px solid red;
-  font-size: 2em;
-  text-align: center;
-}
-
-.wrapper #section3 .container2 .option2 img {
-  width: 50%;
-}
-
-.wrapper #section3 .container2 .option2 .description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0 1em;
+.wrapper #section3 .container .extras .extra p, .wrapper #section3 .container .extras .extra span {
+  font-size: 1.25em;
+  color: #8d9fa6;
+  padding-bottom: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.wrapper #section3 .container2 .option2 .description h3 {
-  font-size: 1.2em;
-  color: #142426;
-  margin-bottom: .25em;
-  text-align: left;
-}
-
-.wrapper #section3 .container2 .option2 .description :nth-child(3) {
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #496b73;
-}
-
-.wrapper #section3 .container2 .option3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 10em;
-  margin-top: 2em;
-}
-
-.wrapper #section3 .container2 .option3 h3 {
-  border: 1px solid red;
-  font-size: 2em;
-  text-align: center;
-}
-
-.wrapper #section3 .container2 .option3 img {
-  width: 50%;
-}
-
-.wrapper #section3 .container2 .option3 .description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0 1em;
+.wrapper #section3 .container footer {
+  position: relative;
+  z-index: 15;
+  background-color: #142426;
+  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.wrapper #section3 .container2 .option3 .description h3 {
-  font-size: 1.2em;
-  color: #142426;
-  margin-bottom: .25em;
-  text-align: left;
-}
-
-.wrapper #section3 .container2 .option3 .description :nth-child(3) {
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #496b73;
-}
-
-.wrapper #section3 .container2 .option4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 10em;
-  margin-top: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.wrapper #section3 .container2 .option4 h3 {
-  border: 1px solid red;
-  font-size: 2em;
-  text-align: center;
+.wrapper #section3 .container footer p {
+  color: #ccd3d9;
 }
 
-.wrapper #section3 .container2 .option4 img {
-  width: 50%;
-}
-
-.wrapper #section3 .container2 .option4 .description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.wrapper #section3 .container2 .option4 .description h3 {
-  font-size: 1.2em;
-  color: #142426;
-  margin-bottom: .25em;
-  text-align: left;
-}
-
-.wrapper #section3 .container2 .option4 .description :nth-child(3) {
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #496b73;
+.wrapper #section3 .container footer button {
+  background-color: #496b73;
+  color: #ccd3d9;
+  padding: .5em 1em;
+  border-radius: 3px;
 }
 
 .wrapper .toHotel {
@@ -938,6 +1104,14 @@ section {
 }
 
 .wrapper #section4 header {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #142426;
+  width: 100vw;
+}
+
+.wrapper #section4 header .welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -947,28 +1121,31 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #142426;
-  height: 7em;
-  width: 100vw;
 }
 
-.wrapper #section4 header h2 {
+.wrapper #section4 header .welcome h2 {
   font-weight: 300;
   color: white;
 }
 
-.wrapper #section4 header h2 span {
+.wrapper #section4 header .welcome h2 span {
   color: white;
   letter-spacing: .1em;
 }
 
-.wrapper #section4 header .pic {
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  background-color: #8d9fa6;
+.wrapper #section4 header .welcome .back {
+  color: white;
+  font-size: 1.25em;
+}
+
+.wrapper #section4 header .counter {
+  position: relative;
+  z-index: 10;
+  width: 60vw;
+}
+
+.wrapper #section4 header .counter p {
+  color: #ccd3d9;
+  font-weight: 300;
 }
 /*# sourceMappingURL=style2.css.map */
