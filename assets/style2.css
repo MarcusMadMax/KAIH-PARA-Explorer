@@ -22,7 +22,6 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper #splashScreen {
@@ -801,7 +800,7 @@ section {
   margin: .5em 0;
 }
 
-.wrapper #section3 .container .option1 .pics p {
+.wrapper #section3 .container .option1 .pics button {
   position: absolute;
   z-index: 2;
   top: -1em;
@@ -814,6 +813,12 @@ section {
   border-radius: 50%;
   color: #142426;
   background-color: #8d9fa6;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option1 .pics button:focus {
+  outline: none;
+  color: #ccd3d9;
 }
 
 .wrapper #section3 .container .option1 .description {
@@ -862,7 +867,7 @@ section {
   margin: .5em 0;
 }
 
-.wrapper #section3 .container .option2 .pics p {
+.wrapper #section3 .container .option2 .pics button {
   position: absolute;
   z-index: 2;
   top: -1em;
@@ -875,6 +880,12 @@ section {
   border-radius: 50%;
   color: #142426;
   background-color: #8d9fa6;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option2 .pics button:focus {
+  outline: none;
+  color: #ccd3d9;
 }
 
 .wrapper #section3 .container .option2 .description {
@@ -923,7 +934,7 @@ section {
   margin: .5em 0;
 }
 
-.wrapper #section3 .container .option3 .pics p {
+.wrapper #section3 .container .option3 .pics button {
   position: absolute;
   z-index: 2;
   top: -1em;
@@ -936,6 +947,12 @@ section {
   border-radius: 50%;
   color: #142426;
   background-color: #8d9fa6;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option3 .pics button:focus {
+  outline: none;
+  color: #ccd3d9;
 }
 
 .wrapper #section3 .container .option3 .description {
@@ -986,7 +1003,7 @@ section {
   margin: .5em 0;
 }
 
-.wrapper #section3 .container .option4 .pics p {
+.wrapper #section3 .container .option4 .pics button {
   position: absolute;
   z-index: 2;
   top: -1em;
@@ -999,6 +1016,12 @@ section {
   border-radius: 50%;
   color: #142426;
   background-color: #8d9fa6;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option4 .pics button:focus {
+  outline: none;
+  color: #ccd3d9;
 }
 
 .wrapper #section3 .container .option4 .description {
@@ -1064,10 +1087,19 @@ section {
   margin: 0 auto;
 }
 
-.wrapper #section3 .container .extras .extra p, .wrapper #section3 .container .extras .extra span {
+.wrapper #section3 .container .extras .extra p {
   font-size: 1.25em;
   color: #8d9fa6;
   padding-bottom: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper #section3 .container .extras .extra button {
+  font-size: 1.25em;
+  color: #ccd3d9;
+  background-color: #496b73;
+  padding: 0 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

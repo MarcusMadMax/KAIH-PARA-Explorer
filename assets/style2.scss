@@ -167,7 +167,7 @@ $semilight-grey: #8d9fa6;
             margin: .5em 0;
         }
 
-        p{
+        button{
             position: absolute;
             z-index: 2;
             top: -1em;
@@ -179,6 +179,12 @@ $semilight-grey: #8d9fa6;
             border-radius: 50%;
             color: $dark-grey;
             background-color: $semilight-grey;
+            cursor: pointer;
+
+            &:focus{
+                outline: none;
+                color: $light-grey;
+            }
         }
     }
 
@@ -230,7 +236,7 @@ section{
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
 
     //Section 1---------------------------------------
     #splashScreen{
@@ -801,10 +807,18 @@ section{
                     width: 80vw;
                     margin: 0 auto;
 
-                    p, span{
+                    p{
                         font-size: 1.25em;
                         color: $semilight-grey;
                         padding-bottom: .5em;
+                        box-sizing: border-box;
+                    }
+
+                    button{
+                        font-size: 1.25em;
+                        color: $light-grey;
+                        background-color: $green-grey;
+                        padding: 0 1em;
                         box-sizing: border-box;
                     }
                 }
