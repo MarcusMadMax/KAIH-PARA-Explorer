@@ -1,5 +1,7 @@
 var iNights = 1
 var iPeople = 1
+var iRoomRate = 0
+var iExtra = 0
 
 $(function () {
 
@@ -426,18 +428,18 @@ $(function () {
 
     //Add to price list-----------------------------------------
     $('.addToList').on('click', function () {
-        $(this).each(function(){
-            $('.price').html($(this).val())
-        })
+        iRoomRate = parseInt($(this).val())
+
+        $('.price').html(iRoomRate * iNights + iExtra)
+        
     })
+
 
     //Extras add to price---------------------------------------------
     $('.extra button').on('click',function(){
-        var iAccom = $('.price').val()
-
-        $(this).each(function(){
-            var iMeals = $(this).val()
-            console.log(iAccom)
-        })
+        
+        iExtra += parseInt($(this).val())
+        $('.price').html(iRoomRate * iNights + iExtra)
+        
     })
 })
