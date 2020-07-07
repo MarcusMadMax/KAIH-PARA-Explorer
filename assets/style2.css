@@ -22,6 +22,7 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper #splashScreen {
@@ -1104,6 +1105,11 @@ section {
           box-sizing: border-box;
 }
 
+.wrapper #section3 .container .extras .extra button:focus {
+  outline: none;
+  color: #384d59;
+}
+
 .wrapper #section3 .container .swipeUp {
   position: absolute;
   bottom: 0;
@@ -1136,6 +1142,10 @@ section {
   color: #ccd3d9;
   padding: .5em 1em;
   border-radius: 3px;
+}
+
+.wrapper #section3 .container footer button:focus {
+  outline: none;
 }
 
 .wrapper .toHotel {

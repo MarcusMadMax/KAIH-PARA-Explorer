@@ -149,6 +149,10 @@ $semilight-grey: #8d9fa6;
         color: $light-grey;
         padding: .5em 1em;
         border-radius: 3px;
+
+        &:focus{
+            outline: none;
+        }
     }
 }
 
@@ -236,7 +240,7 @@ section{
     position: relative;
     width: 100vw;
     height: 100vh;
-    // overflow: hidden;
+    overflow: hidden;
 
     //Section 1---------------------------------------
     #splashScreen{
@@ -820,6 +824,11 @@ section{
                         background-color: $green-grey;
                         padding: 0 1em;
                         box-sizing: border-box;
+
+                        &:focus{
+                            outline: none;
+                            color: $medium-grey;
+                        }
                     }
                 }
             }
