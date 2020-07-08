@@ -304,7 +304,7 @@
                 </main>
                 <footer>
                     <p>Your price: $<span class="price"></span></p>
-                    <button>Book now</button>
+                    <button class="bookNow">Book now</button>
                 </footer>
             </div>
 
@@ -387,7 +387,7 @@
                 </main>
                 <footer>
                     <p>Your price: $<span class="price"></span></p>
-                    <button>Book now</button>
+                    <button class="bookNow">Book now</button>
                 </footer>
             </div>
 
@@ -477,7 +477,7 @@
                 </main>
                 <footer>
                     <p>Your price: $<span class="price"></span></p>
-                    <button>Book now</button>
+                    <button class="bookNow">Book now</button>
                 </footer>
             </div>
 
@@ -570,7 +570,7 @@
                 </main>
                 <footer>
                     <p>Your price: $<span class="price"></span></p>
-                    <button>Book now</button>
+                    <button class="bookNow">Book now</button>
                 </footer>
             </div>
         </section>
@@ -588,8 +588,15 @@
             </header>
             <main>
                 <h3>Please confirm your booking</h3>
-                <p>Your booking: $<span class="price"></span></p>
-
+                <form id="bookingConfirm" action="#" method="get">
+                    <input type="checkbox" name="people">
+                    <label for="people" class="singlePeople"></label><br>
+                    <input type="checkbox" name="nights">
+                    <label for="nights" class="singleNights"></label><br>
+                    <p>Price: $<span class="price"></span></p>
+                    <!-- <input type="submit" value="Confirm"> -->
+                  </form>
+                  <h3>Payment methods</h3>
                 <div class="container shadow">
                     <form action="#" method="POST" class="submit">
                         <div class="outerGroup owner">

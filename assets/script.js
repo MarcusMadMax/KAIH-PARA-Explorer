@@ -179,9 +179,21 @@ $(function () {
         } else {
             $('.people').html(iPeople + ' People ' + iNights + ' Nights')
         }
-        $('.nights').html(iNights)
-        $('.singlePeople').html(iPeople)
+        // $('.longNights').append(iNights)
+        // $('.People').append(iPeople)
 
+    $('.bookNow').on('click',function(){
+        if (iPeople == 1) {
+            $('.singlePeople').html(iPeople + ' Person.')
+        } else{
+            $('.singlePeople').html(iPeople + ' People.')
+        }
+        if (iNights == 1) {
+            $('.singleNights').html(iNights + ' Night.')
+        } else{
+            $('.singleNights').html(iNights + ' Nights.')
+        }
+    })
         slideUp.play()
 
         //show sutiable options
@@ -370,10 +382,6 @@ $(function () {
 
 
 
-
-
-
-
     //Validation of name------------------------------------------------
     function checkMyLetters() {
         var sValue = this.value
@@ -457,6 +465,28 @@ $(function () {
 
 
 
+
+    //Book now button----------------------------------------
+    var oBookNow = anime({
+        targets: '#section4',
+        translateY: '-300%',
+        duration: 1,
+        autoplay: false
+    })
+    $('.bookNow').on('click',function(){
+        oBookNow.play()
+    })
+
+    var backToBookings = anime({
+        targets: '#section4',
+        translateY: '100%',
+        duration: 1,
+        autoplay: false 
+    })
+    $('#section4 .back').on('click',function(){
+        backToBookings.play()
+    })
+
     //Credit card--------------------------------------------
     //Event handler
     function checkFilledIn() {
@@ -538,18 +568,18 @@ $(function () {
              x.value = x.value + '-';
     }
 
-    function checkEmAll(e){
-        e.preventDefault()
-        var isOwner = checkFilledIn.call(oOwner)
-        var isCvv = checkFilledIn.call(oCvv)
-        var isCardMumber = checkFilledIn.call(oCardNumber)
+    // function checkEmAll(e){
+    //     e.preventDefault()
+    //     var isOwner = checkFilledIn.call(oOwner)
+    //     var isCvv = checkFilledIn.call(oCvv)
+    //     var isCardMumber = checkFilledIn.call(oCardNumber)
 
-        var AllVaild =  isOwner &&  isCvv && isCardMumber
+    //     var AllVaild =  isOwner &&  isCvv && isCardMumber
 
-        if(AllVaild == false){
-            e.preventDefault() 
-        }
-     }
+    //     if(AllVaild == false){
+    //         e.preventDefault() 
+    //     }
+    //  }
 
 
 
@@ -563,8 +593,8 @@ $(function () {
     var oCardNumber = document.querySelector('#section4 #cardnumber')
     oCardNumber.addEventListener('blur', creditCards)
 
-    var oForm = document.querySelector('#section4 form')
-    oForm.addEventListener('click', checkEmAll)
+    // var oForm = document.querySelector('#section4 form')
+    // oForm.addEventListener('click', checkEmAll)
 
 
 

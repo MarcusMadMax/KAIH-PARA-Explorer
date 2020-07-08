@@ -867,6 +867,8 @@ section{
         position: relative;
         width: 100vw;
         height: 100vh;
+        background-color: $white-color;
+        z-index: 50;
 
         header{
             @include genericHeader;
@@ -881,6 +883,21 @@ section{
             font-weight: 700;
             margin: 1em auto;
             color: $dark-grey;
+        }
+
+        #bookingConfirm{
+            width: 50vw;
+            margin: 0 auto;
+            font-size: 1.5em;
+            color: $dark-grey;
+
+            input[type=checkbox]{
+                // visibility: hidden;
+                width: 2em;
+                height: 2em;
+                border-radius: 3em;
+                background-color: red;
+            }
         }
 
         .container{

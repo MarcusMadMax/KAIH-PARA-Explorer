@@ -1171,6 +1171,8 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
+  background-color: white;
+  z-index: 50;
 }
 
 .wrapper #section4 header {
@@ -1230,6 +1232,20 @@ section {
   font-weight: 700;
   margin: 1em auto;
   color: #142426;
+}
+
+.wrapper #section4 #bookingConfirm {
+  width: 50vw;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: #142426;
+}
+
+.wrapper #section4 #bookingConfirm input[type=checkbox] {
+  width: 2em;
+  height: 2em;
+  border-radius: 3em;
+  background-color: red;
 }
 
 .wrapper #section4 .container {
