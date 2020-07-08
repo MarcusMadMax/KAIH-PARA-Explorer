@@ -98,18 +98,18 @@ $(function () {
         scale: 1,
         duration: 300,
     })
-    $('.signup').on('click', function () {
+    $('.gotToSignUp').on('click', function () {
         signup.play()
     })
 
-    var moveToSignIn = anime({
+    var moveToLogIn = anime({
         targets: '.callToAction',
-        translateX: '-200%',
-        duration: 1,
+        translateY: '200px',
+        duration: 5000,
         autoplay: false,
     })
-    $('.SignUp').on('click', function () {
-        moveToSignIn.play()
+    $('.backToLogIn').on('click', function () {
+        moveToLogIn.play()
     })
 
     //Back--------------------------------------
@@ -375,7 +375,7 @@ $(function () {
 
 
     //Validation of name------------------------------------------------
-    function checkLetters() {
+    function checkMyLetters() {
         var sValue = this.value
         var oAlphabeticExp = /^[A-Za-z]*$/
         var placeholder = document.querySelector('.username')
@@ -395,7 +395,7 @@ $(function () {
 
     function checkAll(e) {
         e.preventDefault()
-        var isFirstName = checkLetters.call(oFirstName)
+        var isFirstName = checkMyLetters.call(oFirstName)
         var isAllVaild = isFirstName
 
         if (isAllVaild == true) {
@@ -411,7 +411,7 @@ $(function () {
 
 
     var oFirstName = document.querySelector('.username')
-    oFirstName.addEventListener('blur', checkLetters)
+    oFirstName.addEventListener('blur', checkMyLetters)
 
     var oForm = document.querySelector('#logIn button')
     oForm.addEventListener('click', checkAll)
@@ -428,18 +428,144 @@ $(function () {
 
     //Add to price list-----------------------------------------
     $('.addToList').on('click', function () {
-        iRoomRate = parseInt($(this).val())
+        if (iRoomRate == 0) {
+            iRoomRate = parseInt($(this).val())
+            $('.price').html(iRoomRate * iNights + iExtra)
+            $(this).html('Remove')
+        } else {
+            iRoomRate = 0
+            $('.price').empty()
+            $(this).html('ADD')
+        }
 
-        $('.price').html(iRoomRate * iNights + iExtra)
-        
     })
 
 
     //Extras add to price---------------------------------------------
-    $('.extra button').on('click',function(){
-        
-        iExtra += parseInt($(this).val())
-        $('.price').html(iRoomRate * iNights + iExtra)
-        
+    $('.extra button').on('click', function () {
+        if (iExtra == 0) {
+            iExtra += parseInt($(this).val())
+            $('.price').html(iRoomRate * iNights + iExtra * iPeople)
+            $(this).html('Remove')
+        } else {
+            iExtra = 0
+            $('.price').html(iRoomRate * iNights - iExtra)
+            $(this).html('ADD')
+        }
+
     })
+
+
+
+    //Credit card--------------------------------------------
+    //Event handler
+    function checkFilledIn() {
+        var sValue = this.value
+        var isValid = false
+
+        if (sValue == '') {
+            this.placeholder = "Fill in please";
+            this.className = 'message-error'
+        } else {
+            this.className = 'message-sucsess'
+
+            isValid = true
+        }
+        return isValid
+    }
+
+    function checkLetters() {
+        var sValue = this.value
+        var oAlphabeticExp = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/
+        var bResult = oAlphabeticExp.test(sValue)
+        var isValid = false
+
+        if (sValue == '') {
+            this.placeholder = "Fill in please";
+            this.className = 'message-error'
+        } else if(bResult == false){
+            this.innerHTML = 'Only letters'
+            this.className = 'message-error'
+        }else{
+            this.className = 'message-sucsess'
+            isValid = true
+        }
+        return isValid
+    }
+
+    function creditCards(){
+        var sValue = this.value
+        var oVisaRegExp = /^4[0-9]{12}(?:[0-9]{3})?$/
+        var bResultVisa = oVisaRegExp.test(sValue)
+        var oMasterRegExp = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/
+        var bResultMaster = oMasterRegExp.test(sValue)
+        var oAmexRegExp = /^3[47][0-9]{13}$/
+        var bResultAmex = oAmexRegExp.test(sValue)
+        var oVisa = document.querySelector('.visa')
+        var oMaster = document.querySelector('.master')
+        var oAmex = document.querySelector('.amex')
+        oVisa.classList.remove('transparent')
+        oMaster.classList.remove('transparent')
+        oAmex.classList.remove('transparent')
+
+        var isValid = false
+
+        if(bResultVisa == true){
+            oMaster.classList.add('transparent')
+            oAmex.classList.add('transparent')
+            this.className = 'message-sucsess'
+        }else if(bResultMaster == true){
+            oVisa.classList.add('transparent')
+            oAmex.classList.add('transparent')
+            this.className = 'message-sucsess'
+        }else if(bResultAmex == true){
+            oVisa.classList.add('transparent')
+            oMaster.classList.add('transparent')
+            this.className = 'message-sucsess'
+            isValid = true
+        }else{
+            this.placeholder = "Fill in please";
+            this.className = 'message-error'
+        }
+        return isValid
+    }
+
+    function formatCreditCard() {
+        var x = document.getElementById("cardnumber");
+        var index = x.value.lastIndexOf('-');
+        var test = x.value.substr(index + 1);
+        if (test.length === 4)
+             x.value = x.value + '-';
+    }
+
+    function checkEmAll(e){
+        e.preventDefault()
+        var isOwner = checkFilledIn.call(oOwner)
+        var isCvv = checkFilledIn.call(oCvv)
+        var isCardMumber = checkFilledIn.call(oCardNumber)
+
+        var AllVaild =  isOwner &&  isCvv && isCardMumber
+
+        if(AllVaild == false){
+            e.preventDefault() 
+        }
+     }
+
+
+
+    //Main programm
+    var oOwner = document.querySelector('#section4 #owner')
+    oOwner.addEventListener('blur', checkLetters)
+
+    var oCvv = document.querySelector('#section4 #cvv')
+    oCvv.addEventListener('blur', checkFilledIn)
+
+    var oCardNumber = document.querySelector('#section4 #cardnumber')
+    oCardNumber.addEventListener('blur', creditCards)
+
+    var oForm = document.querySelector('#section4 form')
+    oForm.addEventListener('click', checkEmAll)
+
+
+
 })

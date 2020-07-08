@@ -22,7 +22,6 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper #splashScreen {
@@ -243,17 +242,17 @@ section {
   font-weight: 300;
 }
 
-.wrapper #splashScreen #signUp .LogIn, .wrapper #splashScreen #signUp .SignUp, .wrapper #splashScreen #logIn .LogIn, .wrapper #splashScreen #logIn .SignUp {
+.wrapper #splashScreen #signUp form button, .wrapper #splashScreen #logIn form button {
   width: 17em;
   font-size: 1em;
   padding: .5em 2em;
   border-radius: 1em;
   background-color: rgba(255, 255, 255, 0.45);
   color: white;
-  margin: 3em auto 0 auto;
+  margin: 2.75em auto 0 auto;
 }
 
-.wrapper #splashScreen #signUp .LogIn:focus, .wrapper #splashScreen #signUp .SignUp:focus, .wrapper #splashScreen #logIn .LogIn:focus, .wrapper #splashScreen #logIn .SignUp:focus {
+.wrapper #splashScreen #signUp form button:focus, .wrapper #splashScreen #logIn form button:focus {
   outline: none;
 }
 
@@ -1061,7 +1060,7 @@ section {
   left: 0;
   width: 100%;
   background-color: #496b73;
-  border-radius: 1em 1em 0 0;
+  border-radius: 5em 5em 0 0;
   -webkit-transition: all ease-in-out .6s;
   transition: all ease-in-out .6s;
   cursor: pointer;
@@ -1172,7 +1171,6 @@ section {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: red;
 }
 
 .wrapper #section4 header {
@@ -1222,5 +1220,204 @@ section {
 .wrapper #section4 header .counter p {
   color: #ccd3d9;
   font-weight: 300;
+}
+
+.wrapper #section4 h3 {
+  text-align: center;
+  width: 80vw;
+  font-size: 5vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 1em auto;
+  color: #142426;
+}
+
+.wrapper #section4 .container {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 80vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #ccd3d9;
+}
+
+.wrapper #section4 .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #142426;
+  font-weight: 400;
+}
+
+.wrapper #section4 .container form input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 1.25em;
+  outline: none;
+  padding: .15em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: .15em;
+}
+
+.wrapper #section4 .container form input[type=text] {
+  color: #142426;
+  text-align: center;
+  font-weight: 300;
+}
+
+.wrapper #section4 .container form ::-webkit-input-placeholder {
+  color: rgba(20, 36, 38, 0.2);
+  text-align: left;
+  padding-left: .5em;
+}
+
+.wrapper #section4 .container form :-ms-input-placeholder {
+  color: rgba(20, 36, 38, 0.2);
+  text-align: left;
+  padding-left: .5em;
+}
+
+.wrapper #section4 .container form ::-ms-input-placeholder {
+  color: rgba(20, 36, 38, 0.2);
+  text-align: left;
+  padding-left: .5em;
+}
+
+.wrapper #section4 .container form ::placeholder {
+  color: rgba(20, 36, 38, 0.2);
+  text-align: left;
+  padding-left: .5em;
+}
+
+.wrapper #section4 .container form .owner {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
+  margin: .25em;
+}
+
+.wrapper #section4 .container form .cvv {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+  margin: .25em;
+}
+
+.wrapper #section4 .container form .cardnumber {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  margin: 1em .25em;
+}
+
+.wrapper #section4 .container form .expiry {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+  padding: .15em;
+  margin-top: 1em;
+}
+
+.wrapper #section4 .container form .expiry label {
+  display: block;
+  width: 100%;
+}
+
+.wrapper #section4 .container form .expiry #month, .wrapper #section4 .container form .expiry #year {
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#ebeaea), to(#d5d5d5));
+  background-image: linear-gradient(to bottom left, #ebeaea, #d5d5d5);
+  font-size: 1.25em;
+  border: 1px solid #142426;
+  border-radius: .1em;
+  padding: .5em;
+  margin: .25em 0;
+  color: #142426;
+}
+
+.wrapper #section4 .container form .cards {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+  margin: 1.5em 0;
+}
+
+.wrapper #section4 .container form .cards .card {
+  margin: 0 .25em;
+}
+
+.wrapper #section4 .container form .cards .card img {
+  height: 2.5em;
+}
+
+.wrapper #section4 .container form .submit {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.wrapper #section4 .container form #submit {
+  background-color: #496b73;
+  border: none;
+  width: 70vw;
+  padding: .5em 0;
+  color: white;
+  cursor: pointer;
+}
+
+.wrapper #section4 .shadow {
+  position: relative;
+}
+
+.wrapper #section4 .shadow :before, .wrapper #section4 .shadow :after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 1.5em;
+  left: .75em;
+  width: 50%;
+  top: 90%;
+  -webkit-box-shadow: 0 15px 10px #777;
+          box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+
+.wrapper #section4 .shadow :after {
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+  right: .75em;
+  left: auto;
+}
+
+.wrapper #section4 .message-error {
+  -webkit-box-shadow: 0px 0px 2px 2px red;
+          box-shadow: 0px 0px 2px 2px red;
+}
+
+.wrapper #section4 .message-sucsess {
+  -webkit-box-shadow: 0px 0px 2px 2px green;
+          box-shadow: 0px 0px 2px 2px green;
+}
+
+.wrapper #section4 .transparent {
+  opacity: .1;
+}
+
+.wrapper #section4 .transparent img {
+  height: 2.5em;
 }
 /*# sourceMappingURL=style2.css.map */

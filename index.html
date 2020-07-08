@@ -61,7 +61,7 @@
                 <div id="buttonsSocial">
                     <div class="buttons">
                         <button class="login">Log in</button>
-                        <button class="signup">Sign up</button>
+                        <button class="gotToSignUp">Sign up</button>
                     </div>
                     <p>or</p>
                     <div class="social">
@@ -94,7 +94,7 @@
                                     <input class="password_confirmation" type="password" name="password_confirmation"
                                         placeholder="Confirm Password">
                                 </div>
-                                <button type="submit" class="SignUp">Sign up</button>
+                                <button class="backToLogIn">Sign up</button>
                             </fieldset>
                         </form>
                     </div>
@@ -174,7 +174,6 @@
                 <h2>How many People</h2>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">0</div>
                         <div class="swiper-slide">1</div>
                         <div class="swiper-slide">2</div>
                         <div class="swiper-slide">3</div>
@@ -249,7 +248,7 @@
                                 <p>Surrounded by dramatic mountains and dating from New Zealand's gold rush era, this
                                     casual, clapboard hotel with stone annexes is 10 km from Crown Range and 15 km from
                                     the Cardrona Alpine Resort ski area.</p>
-                                <p>Price: $157 per night</p>
+                                <p>Price: $150 per night</p>
                             </div>
                         </div>
                         <div class="option2 option">
@@ -257,12 +256,13 @@
                                 <h2>Duke of Marlborough</h2>
                                 <div class="pics">
                                     <button value="200" class="addToList">Add</button>
-                                    <img src="assets/Images/Hotel2_DukeOfMarborough_Russel.jpg" alt="Duke of Marlborough Russel">
+                                    <img src="assets/Images/Hotel2_DukeOfMarborough_Russel.jpg"
+                                        alt="Duke of Marlborough Russel">
                                 </div>
                                 <p>Refreshing Rascals and Reprobates since 1827. Located on the waterfront of Russell in
                                     the Bay of Islands, the Duke of Marlborough Hotel offers an outstanding restaurant,
                                     accommodation and event venue.</p>
-                                <p>Price: $<span class="value">150</span> per night</p>
+                                <p>Price: $200 per night</p>
                             </div>
                         </div>
                         <div class="option3 option">
@@ -275,7 +275,7 @@
                                 <p>Contemporary rooms with floor-to-ceiling windows offer balconies, flat-screen TVs,
                                     WiFi, and tea and coffeemaking facilities. Bathrooms feature separate showers and
                                     baths. Some rooms feature harbour views. Suites add separate living areas.</p>
-                                <p>Price: $<span class="value">300</span> per night</p>
+                                <p>Price: $300 per night</p>
                             </div>
                         </div>
                         <div class="option4 option">
@@ -471,7 +471,7 @@
                             <p id="breakfast">Breakfast $20</p><button class="breakfast" value="20">ADD</button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30</p><button class="dinner">ADD</button>
+                            <p id="dinner">Dinner $30</p><button class="dinner" value="30">ADD</button>
                         </div>
                     </div>
                 </main>
@@ -564,7 +564,7 @@
                             <p id="breakfast">Breakfast $20</p><button class="breakfast" value="20">ADD</button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30</p><button class="dinner">ADD</button>
+                            <p id="dinner">Dinner $30</p><button class="dinner" value="30">ADD</button>
                         </div>
                     </div>
                 </main>
@@ -578,7 +578,7 @@
         <section id="section4">
             <header>
                 <div class="welcome">
-                    <h2>Haere Mai <span class="name">
+                    <h2>Kia Ora <span class="name">
                         </span></h2>
                     <div class="back">Back</div>
                 </div>
@@ -587,11 +587,69 @@
                 </div>
             </header>
             <main>
-                <h3>Check out</h3>
+                <h3>Please confirm your booking</h3>
+                <p>Your booking: $<span class="price"></span></p>
+
+                <div class="container shadow">
+                    <form action="#" method="POST" class="submit">
+                        <div class="outerGroup owner">
+                            <div class="formGroup">
+                                <label for="owner" id="label">Owner</label>
+                                <input type="text" id="owner" name="owner" placeholder="Your name"
+                                    onfocus="this.placeholder=''"
+                                    onblur="this.placeholder='Please enter your card name'">
+                            </div>
+                        </div>
+                        <div class="outerGroup cvv">
+                            <div class="formGroup">
+                                <label for="cvv" id="label">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="CVV">
+                                <span id="monthMessage"></span>
+                            </div>
+                        </div>
+                        <div class="outerGroup cardnumber">
+                            <div class="formGroup">
+                                <label for="cardnumber" id="label">Card Number</label>
+                                <input type="text" id="cardnumber" name="cardnumber" onkeydown="formatCreditCard()"
+                                    placeholder="xxxx-xxxx-xxxx-xxxx" value="">
+                            </div>
+                        </div>
+                        <div class="outerGroup expiry">
+                            <label for="expirydate">Expiry date:</label>
+                            <select id="month" name="month">
+                                <option value="">Month</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                            </select>
+                            <span id="monthMessage"></span>
+
+                            <select id="year" name="year">
+                                <option value="">Year</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                            </select>
+                            <span id="yearMessage"></span>
+                        </div>
+                        <div class="cards">
+                            <div class="card visa">
+                                <img src="assets/images/VisaCard1.png" alt="">
+                            </div>
+                            <div class="card master">
+                                <img src="assets/images/MasterCard1.png" alt="">
+                            </div>
+                            <div class="card amex">
+                                <img src="assets/images/Amex1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <input name="submit" id="submit" type="submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
             </main>
             <footer>
-                <p>Your price: $<span class="price"></span></p>
-                <button>Book now</button>
             </footer>
         </section>
 
