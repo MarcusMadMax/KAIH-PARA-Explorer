@@ -178,7 +178,7 @@ $semilight-grey: #8d9fa6;
             right: -1em;
             font-size: 2em;
             font-weight: 700;
-            padding: 1.25em 1em;
+            padding: 1em;
             box-sizing: border-box;
             border-radius: 50%;
             color: $dark-grey;
@@ -886,18 +886,28 @@ section{
         }
 
         #bookingConfirm{
-            width: 50vw;
+            width: 80vw;
             margin: 0 auto;
             font-size: 1.5em;
             color: $dark-grey;
+            line-height: 1.5em;
 
-            input[type=checkbox]{
-                // visibility: hidden;
-                width: 2em;
-                height: 2em;
-                border-radius: 3em;
-                background-color: red;
+            .singlePeople, .singleNights, .sRoom{
+                margin: 0 .5em;
             }
+
+            .price{
+                color: $green-grey;
+                font-weight: 700;
+            }
+        }
+
+        .alignLeft{
+            float: left;
+        }
+
+        .alignRight{
+            float: right;
         }
 
         .container{

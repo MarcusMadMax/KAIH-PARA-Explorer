@@ -807,7 +807,7 @@ section {
   right: -1em;
   font-size: 2em;
   font-weight: 700;
-  padding: 1.25em 1em;
+  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50%;
@@ -874,7 +874,7 @@ section {
   right: -1em;
   font-size: 2em;
   font-weight: 700;
-  padding: 1.25em 1em;
+  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50%;
@@ -941,7 +941,7 @@ section {
   right: -1em;
   font-size: 2em;
   font-weight: 700;
-  padding: 1.25em 1em;
+  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50%;
@@ -1010,7 +1010,7 @@ section {
   right: -1em;
   font-size: 2em;
   font-weight: 700;
-  padding: 1.25em 1em;
+  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50%;
@@ -1235,17 +1235,28 @@ section {
 }
 
 .wrapper #section4 #bookingConfirm {
-  width: 50vw;
+  width: 80vw;
   margin: 0 auto;
   font-size: 1.5em;
   color: #142426;
+  line-height: 1.5em;
 }
 
-.wrapper #section4 #bookingConfirm input[type=checkbox] {
-  width: 2em;
-  height: 2em;
-  border-radius: 3em;
-  background-color: red;
+.wrapper #section4 #bookingConfirm .singlePeople, .wrapper #section4 #bookingConfirm .singleNights, .wrapper #section4 #bookingConfirm .sRoom {
+  margin: 0 .5em;
+}
+
+.wrapper #section4 #bookingConfirm .price {
+  color: #496b73;
+  font-weight: 700;
+}
+
+.wrapper #section4 .alignLeft {
+  float: left;
+}
+
+.wrapper #section4 .alignRight {
+  float: right;
 }
 
 .wrapper #section4 .container {

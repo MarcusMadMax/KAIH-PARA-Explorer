@@ -2,6 +2,8 @@ var iNights = 1
 var iPeople = 1
 var iRoomRate = 0
 var iExtra = 0
+var sExtra = ''
+var sRoom = ''
 
 $(function () {
 
@@ -171,29 +173,29 @@ $(function () {
 
     $('.explore').on('click', function () {
         if (iPeople == 1 && iNights == 1) {
-            $('.people').html(iPeople + ' Person ' + iNights + ' Night')
+            $('.people').html(iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Night')
         } else if (iPeople == 1 && iNights > 1) {
-            $('.people').html(iPeople + ' Person ' + iNights + ' Nights')
+            $('.people').html(iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Nights')
         } else if (iPeople > 1 && iNights == 1) {
-            $('.people').html(iPeople + ' People ' + iNights + ' Night')
+            $('.people').html(iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Night')
         } else {
-            $('.people').html(iPeople + ' People ' + iNights + ' Nights')
+            $('.people').html(iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Nights')
         }
         // $('.longNights').append(iNights)
         // $('.People').append(iPeople)
 
-    $('.bookNow').on('click',function(){
-        if (iPeople == 1) {
-            $('.singlePeople').html(iPeople + ' Person.')
-        } else{
-            $('.singlePeople').html(iPeople + ' People.')
-        }
-        if (iNights == 1) {
-            $('.singleNights').html(iNights + ' Night.')
-        } else{
-            $('.singleNights').html(iNights + ' Nights.')
-        }
-    })
+        $('.bookNow').on('click', function () {
+            if (iPeople == 1) {
+                $('.singlePeople').html( iPeople + ' ' + ' Person ')
+            } else {
+                $('.singlePeople').html( iPeople + ' ' + ' People ')
+            }
+            if (iNights == 1) {
+                $('.singleNights').html( iNights + ' ' + ' Night ')
+            } else {
+                $('.singleNights').html( iNights + ' ' + ' Nights ')
+            }
+        })
         slideUp.play()
 
         //show sutiable options
@@ -438,12 +440,15 @@ $(function () {
     $('.addToList').on('click', function () {
         if (iRoomRate == 0) {
             iRoomRate = parseInt($(this).val())
-            $('.price').html(iRoomRate * iNights + iExtra)
-            $(this).html('Remove')
+            sRoom = $(this).parent().siblings('h2').html()
+            $('.price').html('$' + (iRoomRate * iNights + iExtra))
+            $('.iRoomRate').html('$' + (iRoomRate * iNights))
+            $('.sRoom').html(sRoom)
+            $(this).children("i").attr("class", "fas fa-minus")
         } else {
             iRoomRate = 0
             $('.price').empty()
-            $(this).html('ADD')
+            $(this).children("i").attr("class", "fas fa-plus")
         }
 
     })
@@ -453,14 +458,16 @@ $(function () {
     $('.extra button').on('click', function () {
         if (iExtra == 0) {
             iExtra += parseInt($(this).val())
-            $('.price').html(iRoomRate * iNights + iExtra * iPeople)
-            $(this).html('Remove')
+            sExtra = $(this).attr('class')
+            $('.sExtra').html(sExtra)
+            $('.iExtra').html('$' + (iExtra * iPeople))
+            $('.price').html('$' + (iRoomRate * iNights + iExtra * iPeople))
+            $(this).children("i").attr("class", "fas fa-minus")
         } else {
             iExtra = 0
-            $('.price').html(iRoomRate * iNights - iExtra)
-            $(this).html('ADD')
+            $('.price').html('$' + (iRoomRate * iNights - iExtra))
+            $(this).children("i").attr("class", "fas fa-plus")
         }
-
     })
 
 
@@ -473,7 +480,7 @@ $(function () {
         duration: 1,
         autoplay: false
     })
-    $('.bookNow').on('click',function(){
+    $('.bookNow').on('click', function () {
         oBookNow.play()
     })
 
@@ -481,14 +488,13 @@ $(function () {
         targets: '#section4',
         translateY: '100%',
         duration: 1,
-        autoplay: false 
+        autoplay: false
     })
-    $('#section4 .back').on('click',function(){
+    $('#section4 .back').on('click', function () {
         backToBookings.play()
     })
 
     //Credit card--------------------------------------------
-    //Event handler
     function checkFilledIn() {
         var sValue = this.value
         var isValid = false
@@ -513,17 +519,17 @@ $(function () {
         if (sValue == '') {
             this.placeholder = "Fill in please";
             this.className = 'message-error'
-        } else if(bResult == false){
+        } else if (bResult == false) {
             this.innerHTML = 'Only letters'
             this.className = 'message-error'
-        }else{
+        } else {
             this.className = 'message-sucsess'
             isValid = true
         }
         return isValid
     }
 
-    function creditCards(){
+    function creditCards() {
         var sValue = this.value
         var oVisaRegExp = /^4[0-9]{12}(?:[0-9]{3})?$/
         var bResultVisa = oVisaRegExp.test(sValue)
@@ -540,20 +546,20 @@ $(function () {
 
         var isValid = false
 
-        if(bResultVisa == true){
+        if (bResultVisa == true) {
             oMaster.classList.add('transparent')
             oAmex.classList.add('transparent')
             this.className = 'message-sucsess'
-        }else if(bResultMaster == true){
+        } else if (bResultMaster == true) {
             oVisa.classList.add('transparent')
             oAmex.classList.add('transparent')
             this.className = 'message-sucsess'
-        }else if(bResultAmex == true){
+        } else if (bResultAmex == true) {
             oVisa.classList.add('transparent')
             oMaster.classList.add('transparent')
             this.className = 'message-sucsess'
             isValid = true
-        }else{
+        } else {
             this.placeholder = "Fill in please";
             this.className = 'message-error'
         }
@@ -565,21 +571,21 @@ $(function () {
         var index = x.value.lastIndexOf('-');
         var test = x.value.substr(index + 1);
         if (test.length === 4)
-             x.value = x.value + '-';
+            x.value = x.value + '-';
     }
 
-    // function checkEmAll(e){
-    //     e.preventDefault()
-    //     var isOwner = checkFilledIn.call(oOwner)
-    //     var isCvv = checkFilledIn.call(oCvv)
-    //     var isCardMumber = checkFilledIn.call(oCardNumber)
+    function checkEmAll(e) {
+        e.preventDefault()
+        var isOwner = checkFilledIn.call(oOwner)
+        var isCvv = checkFilledIn.call(oCvv)
+        var isCardMumber = checkFilledIn.call(oCardNumber)
 
-    //     var AllVaild =  isOwner &&  isCvv && isCardMumber
+        var AllVaild = isOwner && isCvv && isCardMumber
 
-    //     if(AllVaild == false){
-    //         e.preventDefault() 
-    //     }
-    //  }
+        if (AllVaild == false) {
+            e.preventDefault()
+        }
+    }
 
 
 
@@ -593,8 +599,8 @@ $(function () {
     var oCardNumber = document.querySelector('#section4 #cardnumber')
     oCardNumber.addEventListener('blur', creditCards)
 
-    // var oForm = document.querySelector('#section4 form')
-    // oForm.addEventListener('click', checkEmAll)
+    var oForm = document.querySelector('#section4 form')
+    oForm.addEventListener('click', checkEmAll)
 
 
 
