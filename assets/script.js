@@ -4,6 +4,7 @@ var iRoomRate = 0
 var iExtra = 0
 var sExtra = ''
 var sRoom = ''
+var sMap = ''
 
 $(function () {
 
@@ -297,8 +298,8 @@ $(function () {
 
     //Night Slider counter---------------------------------------
     const
-        range = document.getElementById('range'),
-        rangeV = document.getElementById('rangeV'),
+        range = document.querySelector('#range'),
+        rangeV = document.querySelector('#rangeV'),
         setValue = () => {
             const
                 newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
@@ -493,6 +494,91 @@ $(function () {
     $('#section4 .back').on('click', function () {
         backToBookings.play()
     })
+
+
+
+    //Map----------------------------------------------------
+    var center = { lat: -44.881445, lng: 169.003597 }
+    var map = L.map('cordrona').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(map)
+
+    var center = { lat: -35.261171, lng: 174.121384 }
+    var map = L.map('duke').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(map)
+
+    var center = { lat: -36.839386, lng: 174.765771 }
+    var map = L.map('hilton').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(map)
+
+    var center = { lat: -44.938192, lng: 168.831699 }
+    var map = L.map('newOrleans').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(map)
+
+    var mapClose = anime({
+        targets: '#cordrona, #duke, #hilton, #newOrleans',
+        opacity: [1, 0],
+        scale: [1, 0],
+        duration: 1000,
+        easing: 'linear',
+        rotate: '4turn',
+        autoplay: false
+    })
+    $('.fa-times-circle').on('click',function(){
+        mapClose.play()
+    })
+    var cordrona = anime({
+        targets: '#cordrona',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var duke = anime({
+        targets: '#duke',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var hilton = anime({
+        targets: '#hilton',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var newOrleans = anime({
+        targets: '#newOrleans',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    $('.viewMap').on('click',function(){
+        sMap = $(this).val()
+        if(sMap == 'cardrona'){
+            cordrona.play()
+        }else if(sMap == 'duke'){
+            duke.play()
+        }else if(sMap == 'hilton'){
+            hilton.play()
+        }else if(sMap == 'newOrleans'){
+            newOrleans.play()
+        }
+    })
+
 
     //Credit card--------------------------------------------
     function checkFilledIn() {

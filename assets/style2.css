@@ -18,6 +18,24 @@ section {
   left: 0;
 }
 
+section #cordrona, section #duke, section #hilton, section #newOrleans {
+  position: absolute;
+  z-index: 20;
+  top: 10vh;
+  height: 80vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOrleans .fas {
+  position: absolute;
+  z-index: 1000;
+  top: 1em;
+  right: 1em;
+  font-size: 3em;
+  color: #142426;
+}
+
 .wrapper {
   position: relative;
   width: 100vw;
@@ -698,6 +716,7 @@ section {
 }
 
 .wrapper #section3 .container {
+  position: relative;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -784,6 +803,7 @@ section {
 }
 
 .wrapper #section3 .container .option1 {
+  position: relative;
   width: 90vw;
   margin: 0 auto 1.5em auto;
   border-bottom: 1px solid #142426;
@@ -831,6 +851,7 @@ section {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .wrapper #section3 .container .option1 .description h2 {
@@ -843,14 +864,38 @@ section {
   color: #142426;
 }
 
-.wrapper #section3 .container .option1 .description :nth-child(4) {
+.wrapper #section3 .container .option1 .description :nth-child(4) p {
   font-size: 1.5em;
   font-weight: 700;
   color: #496b73;
   margin-top: .25em;
 }
 
+.wrapper #section3 .container .option1 .description .priceMap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper #section3 .container .option1 .description .priceMap .viewMap {
+  background-color: #496b73;
+  color: #ccd3d9;
+  padding: .5em 1em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option1 .description .priceMap .viewMap:focus {
+  outline: none;
+  color: #ccd3d9;
+}
+
 .wrapper #section3 .container .option2 {
+  position: relative;
   width: 90vw;
   margin: 0 auto 1.5em auto;
   border-bottom: 1px solid #142426;
@@ -898,6 +943,7 @@ section {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .wrapper #section3 .container .option2 .description h2 {
@@ -910,14 +956,38 @@ section {
   color: #142426;
 }
 
-.wrapper #section3 .container .option2 .description :nth-child(4) {
+.wrapper #section3 .container .option2 .description :nth-child(4) p {
   font-size: 1.5em;
   font-weight: 700;
   color: #496b73;
   margin-top: .25em;
 }
 
+.wrapper #section3 .container .option2 .description .priceMap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper #section3 .container .option2 .description .priceMap .viewMap {
+  background-color: #496b73;
+  color: #ccd3d9;
+  padding: .5em 1em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option2 .description .priceMap .viewMap:focus {
+  outline: none;
+  color: #ccd3d9;
+}
+
 .wrapper #section3 .container .option3 {
+  position: relative;
   width: 90vw;
   margin: 0 auto 1.5em auto;
   border-bottom: 1px solid #142426;
@@ -965,6 +1035,7 @@ section {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .wrapper #section3 .container .option3 .description h2 {
@@ -977,14 +1048,38 @@ section {
   color: #142426;
 }
 
-.wrapper #section3 .container .option3 .description :nth-child(4) {
+.wrapper #section3 .container .option3 .description :nth-child(4) p {
   font-size: 1.5em;
   font-weight: 700;
   color: #496b73;
   margin-top: .25em;
 }
 
+.wrapper #section3 .container .option3 .description .priceMap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper #section3 .container .option3 .description .priceMap .viewMap {
+  background-color: #496b73;
+  color: #ccd3d9;
+  padding: .5em 1em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option3 .description .priceMap .viewMap:focus {
+  outline: none;
+  color: #ccd3d9;
+}
+
 .wrapper #section3 .container .option4 {
+  position: relative;
   width: 90vw;
   margin: 0 auto 1.5em auto;
   border-bottom: 1px solid #142426;
@@ -1034,6 +1129,7 @@ section {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .wrapper #section3 .container .option4 .description h2 {
@@ -1046,11 +1142,34 @@ section {
   color: #142426;
 }
 
-.wrapper #section3 .container .option4 .description :nth-child(4) {
+.wrapper #section3 .container .option4 .description :nth-child(4) p {
   font-size: 1.5em;
   font-weight: 700;
   color: #496b73;
   margin-top: .25em;
+}
+
+.wrapper #section3 .container .option4 .description .priceMap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper #section3 .container .option4 .description .priceMap .viewMap {
+  background-color: #496b73;
+  color: #ccd3d9;
+  padding: .5em 1em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.wrapper #section3 .container .option4 .description .priceMap .viewMap:focus {
+  outline: none;
+  color: #ccd3d9;
 }
 
 .wrapper #section3 .container .extras {
@@ -1134,6 +1253,13 @@ section {
 
 .wrapper #section3 .container footer p {
   color: #ccd3d9;
+  font-size: 1.5em;
+}
+
+.wrapper #section3 .container footer p span {
+  color: #496b73;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 .wrapper #section3 .container footer button {
