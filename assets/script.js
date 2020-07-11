@@ -524,23 +524,98 @@ $(function () {
     .openPopup();
 
     var center = { lat: -36.839386, lng: 174.765771 }
-    var map = L.map('hilton').setView(center, 17)
+    var hilton = L.map('hilton').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
-    ).addTo(map)
+    ).addTo(hilton)
+
+    L.marker([-36.839386, 174.765771], {icon:customPin}).addTo(hilton)
+    .bindPopup('<b>Auckland Hilton</b><br>147 Quay Street<br>Auckland 1010<br> Auckland CBD')
+    .openPopup();
 
     var center = { lat: -44.938192, lng: 168.831699 }
-    var map = L.map('newOrleans').setView(center, 17)
+    var newOrleans = L.map('newOrleans').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
-    ).addTo(map)
+    ).addTo(newOrleans)
 
-    var pins = [{
-        latlng: { lat: -36.85615373497911, lng: 174.76401751821152 },
-        description: 'Superette',
-        icon: 'assets/heart.svg'
-    }]
+    L.marker([-44.938192, 168.831699], {icon:customPin}).addTo(newOrleans)
+    .bindPopup('<b>New Orleans Hotel</b><br>27 Buckingham Street<br>Arrowtown 9302')
+    .openPopup();
+
+    var center = { lat: -35.052027, lng: 173.684234 }
+    var kahoeFarms = L.map('kahoeFarms').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(kahoeFarms)
+
+    L.marker([-35.052027, 173.684234], {icon:customPin}).addTo(kahoeFarms)
+    .bindPopup('<b>Kahoe Farms</b><br>1266 State Highway 10<br>Kaeo 0479')
+    .openPopup();
+
+    var center = { lat: -42.107489, lng: 171.335016 }
+    var punakaiki = L.map('punakaiki').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(punakaiki)
+
+    L.marker([-42.107489, 171.335016], {icon:customPin}).addTo(punakaiki)
+    .bindPopup('<b>Punakaiki</b><br>2 Webb Street<br>Punakaiki 7873')
+    .openPopup();
+
+    var center = { lat: -35.285166, lng: 174.094618 }
+    var mousetrap = L.map('mousetrap').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(mousetrap)
+
+    L.marker([-35.285166, 174.094618], {icon:customPin}).addTo(mousetrap)
+    .bindPopup('<b>The Mousetrap</b><br>11 Kings Road<br>Paihia 0247')
+    .openPopup();
+
+    var center = { lat: -39.226598, lng: 175.397350 }
+    var crossing = L.map('crossing').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(crossing)
+
+    L.marker([-39.226598, 175.397350], {icon:customPin}).addTo(crossing)
+    .bindPopup('<b>The Crossing</b><br>9 Erua Road<br>Erua 3990')
+    .openPopup();
+
+    var center = { lat: -41.513092, lng: 173.966891 }
+    var colonial = L.map('colonial').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(colonial)
+
+    L.marker([-41.513092, 173.966891], {icon:customPin}).addTo(colonial)
+    .bindPopup('<b>The Colonial</b><br>66 Main Street<br>Blenheim 7201')
+    .openPopup();
+
+    var center = { lat: -44.486090, lng: 169.968978 }
+    var sierra = L.map('sierra').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(sierra)
+
+    L.marker([-44.486090, 169.968978], {icon:customPin}).addTo(sierra)
+    .bindPopup('<b>Sierra</b><br>9 Erua Road<br>Erua 3990')
+    .openPopup();
+
+    var center = { lat: -42.449161, lng: 171.214800 }
+    var sundowner = L.map('sundowner').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(sundowner)
+
+    L.marker([-42.449161, 171.214800], {icon:customPin}).addTo(sundowner)
+    .bindPopup('<b>Sundowner</b><br>914 Smith Street<br>Greymouth 7805')
+    .openPopup();
+
+    var center = { lat: -37.793244, lng: 175.278134 }
+    var lakePoint = L.map('lakePoint').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(lakePoint)
+
+    L.marker([-37.793244, 175.278134], {icon:customPin}).addTo(lakePoint)
+    .bindPopup('<b>Lake Point</b><br>42 Thackeray Street<br>Hamilton Lake<br>Hamilton 3204')
+    .openPopup();
+
 
     var mapClose = anime({
-        targets: '#cordrona, #duke, #hilton, #newOrleans',
+        targets: '#cordrona, #duke, #hilton, #newOrleans, #kahoeFarms, #punakaiki, #mousetrap, #crossing, #colonial, #sierra, #sundowner, #lakePoint',
         opacity: [1, 0],
         scale: [1, 0],
         duration: 1000,
@@ -587,6 +662,79 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })
+    var kahoeFarms = anime({
+        targets: '#kahoeFarms',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var punakaiki = anime({
+        targets: '#punakaiki',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var mousetrap = anime({
+        targets: '#mousetrap',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var crossing = anime({
+        targets: '#crossing',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var colonial = anime({
+        targets: '#colonial',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var sierra = anime({
+        targets: '#sierra',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var sundowner = anime({
+        targets: '#sundowner',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+    var lakePoint = anime({
+        targets: '#lakePoint',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
+
     $('.viewMap').on('click',function(){
         sMap = $(this).val()
         if(sMap == 'cardrona'){
@@ -597,6 +745,22 @@ $(function () {
             hilton.play()
         }else if(sMap == 'newOrleans'){
             newOrleans.play()
+        }else if(sMap == 'kahoeFarms'){
+            kahoeFarms.play()
+        }else if(sMap == 'punakaiki'){
+            punakaiki.play()
+        }else if(sMap == 'mousetrap'){
+            mousetrap.play()
+        }else if(sMap == 'crossing'){
+            crossing.play()
+        }else if(sMap == 'colonial'){
+            colonial.play()
+        }else if(sMap == 'sierra'){
+            sierra.play()
+        }else if(sMap == 'sundowner'){
+            sundowner.play()
+        }else if(sMap == 'lakePoint'){
+            lakePoint.play()
         }
     })
 
