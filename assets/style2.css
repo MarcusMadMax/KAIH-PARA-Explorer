@@ -40,6 +40,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper #splashScreen {

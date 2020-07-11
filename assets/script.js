@@ -604,12 +604,12 @@ $(function () {
     .bindPopup('<b>Sundowner</b><br>914 Smith Street<br>Greymouth 7805')
     .openPopup();
 
-    var center = { lat: -37.793244, lng: 175.278134 }
+    var center = { lat: -37.793337, lng: 175.278134 }
     var lakePoint = L.map('lakePoint').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
     ).addTo(lakePoint)
 
-    L.marker([-37.793244, 175.278134], {icon:customPin}).addTo(lakePoint)
+    L.marker([-37.793337, 175.278134], {icon:customPin}).addTo(lakePoint)
     .bindPopup('<b>Lake Point</b><br>42 Thackeray Street<br>Hamilton Lake<br>Hamilton 3204')
     .openPopup();
 
