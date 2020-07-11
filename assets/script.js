@@ -498,15 +498,30 @@ $(function () {
 
 
     //Map----------------------------------------------------
+    var customPin = L.icon({
+        iconUrl: 'assets/images/map-pin-solid.svg',
+        iconSize:     [38, 95],
+        iconAnchor:   [22, 80],
+        popupAnchor:  [-3, -60]
+    })
+
     var center = { lat: -44.881445, lng: 169.003597 }
-    var map = L.map('cordrona').setView(center, 17)
+    var cordrona = L.map('cordrona').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
-    ).addTo(map)
+    ).addTo(cordrona)
+
+    L.marker([-44.881445, 169.003597], {icon:customPin}).addTo(cordrona)
+    .bindPopup('<b>Cordrona Hotel</b><br>2312 Cardrona Valley Road<br> 9382 Cardrona')
+    .openPopup();
 
     var center = { lat: -35.261171, lng: 174.121384 }
-    var map = L.map('duke').setView(center, 17)
+    var duke = L.map('duke').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
-    ).addTo(map)
+    ).addTo(duke)
+
+    L.marker([-35.261171, 174.121384], {icon:customPin}).addTo(duke)
+    .bindPopup('<b>Duke of Marborough</b><br>35 The Strand<br>0202 Russell<br> Bay of Islands')
+    .openPopup();
 
     var center = { lat: -36.839386, lng: 174.765771 }
     var map = L.map('hilton').setView(center, 17)
@@ -517,6 +532,12 @@ $(function () {
     var map = L.map('newOrleans').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
     ).addTo(map)
+
+    var pins = [{
+        latlng: { lat: -36.85615373497911, lng: 174.76401751821152 },
+        description: 'Superette',
+        icon: 'assets/heart.svg'
+    }]
 
     var mapClose = anime({
         targets: '#cordrona, #duke, #hilton, #newOrleans',
