@@ -18,7 +18,7 @@ section {
   left: 0;
 }
 
-section #cordrona, section #duke, section #hilton, section #newOrleans, section #kahoeFarms, section #punakaiki, section #mousetrap, section #crossing, section #colonial, section #sierra, section #sundowner, section #lakePoint {
+section #cordrona, section #duke, section #hilton, section #newOrleans, section #kahoeFarms, section #punakaiki, section #mousetrap, section #crossing, section #colonial, section #sierra, section #sundowner, section #lakePoint, section #solscape, section #bethells, section #bach78, section #thecottage {
   position: absolute;
   z-index: 20;
   top: 10vh;
@@ -27,7 +27,7 @@ section #cordrona, section #duke, section #hilton, section #newOrleans, section 
   margin: 0 auto;
 }
 
-section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOrleans .fas, section #kahoeFarms .fas, section #punakaiki .fas, section #mousetrap .fas, section #crossing .fas, section #colonial .fas, section #sierra .fas, section #sundowner .fas, section #lakePoint .fas {
+section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOrleans .fas, section #kahoeFarms .fas, section #punakaiki .fas, section #mousetrap .fas, section #crossing .fas, section #colonial .fas, section #sierra .fas, section #sundowner .fas, section #lakePoint .fas, section #solscape .fas, section #bethells .fas, section #bach78 .fas, section #thecottage .fas {
   position: absolute;
   z-index: 1000;
   top: 1em;

@@ -613,9 +613,45 @@ $(function () {
     .bindPopup('<b>Lake Point</b><br>42 Thackeray Street<br>Hamilton Lake<br>Hamilton 3204')
     .openPopup();
 
+    var center = { lat: -37.824963, lng: 174.820763 }
+    var solscape = L.map('solscape').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(solscape)
+
+    L.marker([-37.824963, 174.820763], {icon:customPin}).addTo(solscape)
+    .bindPopup('<b>Solscape</b><br>Wainui Road<br>Raglan 3225')
+    .openPopup();    
+    
+    var center = { lat: -36.897359, lng: 174.450958 }
+    var bethells = L.map('bethells').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(bethells)
+
+    L.marker([-36.897359, 174.450958], {icon:customPin}).addTo(bethells)
+    .bindPopup('<b>Bethells Bach</b><br>267 Bethells Road<br>Waitakere<br>Bethells Beach 0781')
+    .openPopup();    
+    
+    var center = { lat: -36.778464, lng: 174.895058 }
+    var bach78 = L.map('bach78').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(bach78)
+
+    L.marker([-36.778464, 174.895058], {icon:customPin}).addTo(bach78)
+    .bindPopup('<b>Bach 78</b><br>Islington Bay<br>Rangitoto Island')
+    .openPopup();    
+    
+    var center = { lat: -35.191998, lng: 174.006574 }
+    var thecottage = L.map('thecottage').setView(center, 17)
+    L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
+    ).addTo(thecottage)
+
+    L.marker([-35.191998, 174.006574], {icon:customPin}).addTo(thecottage)
+    .bindPopup('<b>The Cottage</b><br>177 Rangitane Road<br>Kerikeri 0294')
+    .openPopup();
+
 
     var mapClose = anime({
-        targets: '#cordrona, #duke, #hilton, #newOrleans, #kahoeFarms, #punakaiki, #mousetrap, #crossing, #colonial, #sierra, #sundowner, #lakePoint',
+        targets: '#cordrona, #duke, #hilton, #newOrleans, #kahoeFarms, #punakaiki, #mousetrap, #crossing, #colonial, #sierra, #sundowner, #lakePoint, #solscape, #bethells, #bach78, #thecottage',
         opacity: [1, 0],
         scale: [1, 0],
         duration: 1000,
@@ -734,6 +770,42 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })
+    var lakePoint = anime({
+        targets: '#solscape',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var lakePoint = anime({
+        targets: '#bethells',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var lakePoint = anime({
+        targets: '#bach78',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })    
+    var lakePoint = anime({
+        targets: '#thecottage',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 600,
+        easing: 'linear',
+        rotate: '1turn',
+        autoplay: false
+    })
 
     $('.viewMap').on('click',function(){
         sMap = $(this).val()
@@ -761,6 +833,14 @@ $(function () {
             sundowner.play()
         }else if(sMap == 'lakePoint'){
             lakePoint.play()
+        }else if(sMap == 'solscape'){
+            solscape.play()
+        }else if(sMap == 'bethells'){
+            bethells.play()
+        }else if(sMap == 'bach78'){
+            bach78.play()
+        }else if(sMap == 'thecottage'){
+            thecottage.play()
         }
     })
 
