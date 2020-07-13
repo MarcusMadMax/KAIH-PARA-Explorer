@@ -640,12 +640,12 @@ $(function () {
     .bindPopup('<b>Bach 78</b><br>Islington Bay<br>Rangitoto Island')
     .openPopup();    
     
-    var center = { lat: -35.191998, lng: 174.006574 }
+    var center = { lat: -35.191577, lng: 174.006574 }
     var thecottage = L.map('thecottage').setView(center, 17)
     L.tileLayer('https://api.mapbox.com/styles/v1/marcuszi/ckbzuseik47vd1inx6r18438d/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzemkiLCJhIjoiY2tjZnFzYzMyMDZtYTJ3cGEzNWN2bGxpMCJ9.aPdYszEdH5qFavHlFhXa2g'
     ).addTo(thecottage)
 
-    L.marker([-35.191998, 174.006574], {icon:customPin}).addTo(thecottage)
+    L.marker([-35.191577, 174.006574], {icon:customPin}).addTo(thecottage)
     .bindPopup('<b>The Cottage</b><br>177 Rangitane Road<br>Kerikeri 0294')
     .openPopup();
 
@@ -656,7 +656,6 @@ $(function () {
         scale: [1, 0],
         duration: 1000,
         easing: 'linear',
-        rotate: '4turn',
         autoplay: false
     })
     $('.fa-times-circle').on('click',function(){
@@ -770,7 +769,7 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })
-    var lakePoint = anime({
+    var solscape = anime({
         targets: '#solscape',
         opacity: [0, 1],
         scale: [0, 1],
@@ -779,7 +778,7 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })    
-    var lakePoint = anime({
+    var bethells = anime({
         targets: '#bethells',
         opacity: [0, 1],
         scale: [0, 1],
@@ -788,7 +787,7 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })    
-    var lakePoint = anime({
+    var bach78 = anime({
         targets: '#bach78',
         opacity: [0, 1],
         scale: [0, 1],
@@ -797,7 +796,7 @@ $(function () {
         rotate: '1turn',
         autoplay: false
     })    
-    var lakePoint = anime({
+    var thecottage = anime({
         targets: '#thecottage',
         opacity: [0, 1],
         scale: [0, 1],

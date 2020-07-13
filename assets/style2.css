@@ -21,8 +21,8 @@ section {
 section #cordrona, section #duke, section #hilton, section #newOrleans, section #kahoeFarms, section #punakaiki, section #mousetrap, section #crossing, section #colonial, section #sierra, section #sundowner, section #lakePoint, section #solscape, section #bethells, section #bach78, section #thecottage {
   position: absolute;
   z-index: 20;
-  top: 10vh;
-  height: 80vh;
+  top: 0;
+  height: 100vh;
   width: 100vw;
   margin: 0 auto;
 }
@@ -1300,6 +1300,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   height: 100vh;
   background-color: white;
   z-index: 50;
+  overflow: auto;
 }
 
 .wrapper #section4 header {
@@ -1307,6 +1308,8 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #142426;
+  position: fixed;
+  top: 0;
   width: 100vw;
 }
 
@@ -1351,42 +1354,42 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   font-weight: 300;
 }
 
-.wrapper #section4 h3 {
+.wrapper #section4 main h3 {
   text-align: center;
   width: 80vw;
-  font-size: 5vw;
+  font-size: 2em;
   text-transform: uppercase;
   font-weight: 700;
   margin: 1em auto;
   color: #142426;
 }
 
-.wrapper #section4 #bookingConfirm {
+.wrapper #section4 main #bookingConfirm {
   width: 80vw;
-  margin: 0 auto;
+  margin: 3em auto;
   font-size: 1.5em;
   color: #142426;
   line-height: 1.5em;
 }
 
-.wrapper #section4 #bookingConfirm .singlePeople, .wrapper #section4 #bookingConfirm .singleNights, .wrapper #section4 #bookingConfirm .sRoom {
+.wrapper #section4 main #bookingConfirm .singlePeople, .wrapper #section4 main #bookingConfirm .singleNights, .wrapper #section4 main #bookingConfirm .sRoom {
   margin: 0 .5em;
 }
 
-.wrapper #section4 #bookingConfirm .price {
+.wrapper #section4 main #bookingConfirm .price {
   color: #496b73;
   font-weight: 700;
 }
 
-.wrapper #section4 .alignLeft {
+.wrapper #section4 main .alignLeft {
   float: left;
 }
 
-.wrapper #section4 .alignRight {
+.wrapper #section4 main .alignRight {
   float: right;
 }
 
-.wrapper #section4 .container {
+.wrapper #section4 main .container {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   width: 80vw;
   height: auto;
@@ -1395,7 +1398,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   background-color: #ccd3d9;
 }
 
-.wrapper #section4 .container form {
+.wrapper #section4 main .container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1405,7 +1408,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   font-weight: 400;
 }
 
-.wrapper #section4 .container form input {
+.wrapper #section4 main .container form input {
   border: 1px solid rgba(0, 0, 0, 0.5);
   width: 100%;
   font-size: 1.25em;
@@ -1416,58 +1419,58 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   border-radius: .15em;
 }
 
-.wrapper #section4 .container form input[type=text] {
+.wrapper #section4 main .container form input[type=text] {
   color: #142426;
   text-align: center;
   font-weight: 300;
 }
 
-.wrapper #section4 .container form ::-webkit-input-placeholder {
+.wrapper #section4 main .container form ::-webkit-input-placeholder {
   color: rgba(20, 36, 38, 0.2);
   text-align: left;
   padding-left: .5em;
 }
 
-.wrapper #section4 .container form :-ms-input-placeholder {
+.wrapper #section4 main .container form :-ms-input-placeholder {
   color: rgba(20, 36, 38, 0.2);
   text-align: left;
   padding-left: .5em;
 }
 
-.wrapper #section4 .container form ::-ms-input-placeholder {
+.wrapper #section4 main .container form ::-ms-input-placeholder {
   color: rgba(20, 36, 38, 0.2);
   text-align: left;
   padding-left: .5em;
 }
 
-.wrapper #section4 .container form ::placeholder {
+.wrapper #section4 main .container form ::placeholder {
   color: rgba(20, 36, 38, 0.2);
   text-align: left;
   padding-left: .5em;
 }
 
-.wrapper #section4 .container form .owner {
+.wrapper #section4 main .container form .owner {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 60%;
           flex: 1 0 60%;
   margin: .25em;
 }
 
-.wrapper #section4 .container form .cvv {
+.wrapper #section4 main .container form .cvv {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 30%;
           flex: 1 0 30%;
   margin: .25em;
 }
 
-.wrapper #section4 .container form .cardnumber {
+.wrapper #section4 main .container form .cardnumber {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
   margin: 1em .25em;
 }
 
-.wrapper #section4 .container form .expiry {
+.wrapper #section4 main .container form .expiry {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 30%;
           flex: 1 0 30%;
@@ -1475,12 +1478,12 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   margin-top: 1em;
 }
 
-.wrapper #section4 .container form .expiry label {
+.wrapper #section4 main .container form .expiry label {
   display: block;
   width: 100%;
 }
 
-.wrapper #section4 .container form .expiry #month, .wrapper #section4 .container form .expiry #year {
+.wrapper #section4 main .container form .expiry #month, .wrapper #section4 main .container form .expiry #year {
   background-image: -webkit-gradient(linear, right top, left bottom, from(#ebeaea), to(#d5d5d5));
   background-image: linear-gradient(to bottom left, #ebeaea, #d5d5d5);
   font-size: 1.25em;
@@ -1491,7 +1494,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   color: #142426;
 }
 
-.wrapper #section4 .container form .cards {
+.wrapper #section4 main .container form .cards {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1507,15 +1510,15 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   margin: 1.5em 0;
 }
 
-.wrapper #section4 .container form .cards .card {
+.wrapper #section4 main .container form .cards .card {
   margin: 0 .25em;
 }
 
-.wrapper #section4 .container form .cards .card img {
+.wrapper #section4 main .container form .cards .card img {
   height: 2.5em;
 }
 
-.wrapper #section4 .container form .submit {
+.wrapper #section4 main .container form .submit {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
@@ -1523,7 +1526,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   margin: 1em 0;
 }
 
-.wrapper #section4 .container form #submit {
+.wrapper #section4 main .container form #submit {
   background-color: #496b73;
   border: none;
   width: 70vw;
@@ -1532,11 +1535,11 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   cursor: pointer;
 }
 
-.wrapper #section4 .shadow {
+.wrapper #section4 main .shadow {
   position: relative;
 }
 
-.wrapper #section4 .shadow :before, .wrapper #section4 .shadow :after {
+.wrapper #section4 main .shadow :before, .wrapper #section4 main .shadow :after {
   z-index: -1;
   position: absolute;
   content: "";
@@ -1550,28 +1553,28 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
           transform: rotate(-3deg);
 }
 
-.wrapper #section4 .shadow :after {
+.wrapper #section4 main .shadow :after {
   -webkit-transform: rotate(3deg);
           transform: rotate(3deg);
   right: .75em;
   left: auto;
 }
 
-.wrapper #section4 .message-error {
+.wrapper #section4 main .message-error {
   -webkit-box-shadow: 0px 0px 2px 2px red;
           box-shadow: 0px 0px 2px 2px red;
 }
 
-.wrapper #section4 .message-sucsess {
+.wrapper #section4 main .message-sucsess {
   -webkit-box-shadow: 0px 0px 2px 2px green;
           box-shadow: 0px 0px 2px 2px green;
 }
 
-.wrapper #section4 .transparent {
+.wrapper #section4 main .transparent {
   opacity: .1;
 }
 
-.wrapper #section4 .transparent img {
+.wrapper #section4 main .transparent img {
   height: 2.5em;
 }
 /*# sourceMappingURL=style2.css.map */
