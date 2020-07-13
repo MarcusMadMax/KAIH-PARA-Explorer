@@ -1,4 +1,3 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 * {
   padding: 0;
   margin: 0;
@@ -1377,13 +1376,13 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 
 .wrapper #section4 main #bookingConfirm {
   width: 90vw;
-  margin: 3em auto;
+  margin: 2em auto;
   font-size: 1.25em;
   color: #142426;
   line-height: 1.5em;
 }
 
-.wrapper #section4 main #bookingConfirm .singlePeople, .wrapper #section4 main #bookingConfirm .singleNights, .wrapper #section4 main #bookingConfirm .sRoom {
+.wrapper #section4 main #bookingConfirm .singlePeople, .wrapper #section4 main #bookingConfirm .singleNights {
   margin: 0 .5em;
 }
 
@@ -1587,5 +1586,12 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 
 .wrapper #section4 main .transparent img {
   height: 2.5em;
+}
+
+.wrapper #section4 footer {
+  font-size: .5em;
+  color: #142426;
+  text-align: center;
+  margin: 1em 0;
 }
 /*# sourceMappingURL=style2.css.map */

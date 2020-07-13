@@ -7,9 +7,6 @@ $green-grey: #496b73;
 $semilight-grey: #8d9fa6;
 
 
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
-
 @mixin starbkground {
     height: 100vh;
     background-image: url(images/universe.jpg);
@@ -942,12 +939,12 @@ section{
 
             #bookingConfirm{
                 width: 90vw;
-                margin: 3em auto;
+                margin: 2em auto;
                 font-size: 1.25em;
                 color: $dark-grey;
                 line-height: 1.5em;
 
-                .singlePeople, .singleNights, .sRoom{
+                .singlePeople, .singleNights{
                     margin: 0 .5em;
                 }
 
@@ -1108,6 +1105,13 @@ section{
                     height: 2.5em;
                 }
             }
+        }
+
+        footer{
+            font-size: .5em;
+            color: $dark-grey;
+            text-align: center;
+            margin: 1em 0;
         }
     }
 }
