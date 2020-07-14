@@ -780,6 +780,7 @@ section{
         .container{
             position: relative;
             width: 100vw;
+            // overflow-x: hidden;
             display: flex;
             flex-direction: column;
             background-color: $semilight-grey;
