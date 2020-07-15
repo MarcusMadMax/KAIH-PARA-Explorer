@@ -7,6 +7,7 @@ const
 			newPosition = 10 - (newValue * 0.2);
 		rangeV.innerHTML = `<span>${range.value}</span>`;
 		rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+		console.log(newValue)
 	};
 document.addEventListener("DOMContentLoaded", setValue);
 range.addEventListener('input', setValue);

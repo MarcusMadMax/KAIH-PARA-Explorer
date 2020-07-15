@@ -73,6 +73,7 @@ $semilight-grey: #8d9fa6;
     padding: .5em 2em;
     border-radius: 1em;
     background-color: rgba($color: $white-color, $alpha: .45);
+    cursor: pointer;
     color: $white-color;
 
     &:focus{
@@ -362,6 +363,11 @@ section{
             .formBlock{
                 width: 17em;
                 margin: 0 auto;
+
+                button{
+                    @include buttons;
+                    margin: 2.75em auto 0 auto;
+                }
             }
 
             h2{
@@ -417,11 +423,6 @@ section{
                         color: rgba(255, 255, 255, .35);
                         font-weight: 300;
                     }
-                }
-
-                button{
-                    @include buttons;
-                    margin: 2.75em auto 0 auto;
                 }
             }
         }
@@ -580,7 +581,7 @@ section{
 
                 .range-value{
                     position: absolute;
-                    z-index: 20;
+                    z-index: 100;
                     bottom: -1.8em;
                     width: 1.62em;
                     text-align: center;
@@ -718,6 +719,8 @@ section{
 
                     &.nonselectable{
                         pointer-events: none;
+                        background-color: $semilight-grey;
+                        opacity: .25;
                     }
 
                     p{

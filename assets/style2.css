@@ -144,6 +144,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   padding: .5em 2em;
   border-radius: 1em;
   background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
   color: white;
   position: relative;
   display: block;
@@ -186,6 +187,21 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 .wrapper #splashScreen #signUp .formBlock, .wrapper #splashScreen #logIn .formBlock {
   width: 17em;
   margin: 0 auto;
+}
+
+.wrapper #splashScreen #signUp .formBlock button, .wrapper #splashScreen #logIn .formBlock button {
+  width: 17em;
+  font-size: 1em;
+  padding: .5em 2em;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  color: white;
+  margin: 2.75em auto 0 auto;
+}
+
+.wrapper #splashScreen #signUp .formBlock button:focus, .wrapper #splashScreen #logIn .formBlock button:focus {
+  outline: none;
 }
 
 .wrapper #splashScreen #signUp h2, .wrapper #splashScreen #logIn h2 {
@@ -258,20 +274,6 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 .wrapper #splashScreen #signUp form .formGroup ::placeholder, .wrapper #splashScreen #logIn form .formGroup ::placeholder {
   color: rgba(255, 255, 255, 0.35);
   font-weight: 300;
-}
-
-.wrapper #splashScreen #signUp form button, .wrapper #splashScreen #logIn form button {
-  width: 17em;
-  font-size: 1em;
-  padding: .5em 2em;
-  border-radius: 1em;
-  background-color: rgba(255, 255, 255, 0.45);
-  color: white;
-  margin: 2.75em auto 0 auto;
-}
-
-.wrapper #splashScreen #signUp form button:focus, .wrapper #splashScreen #logIn form button:focus {
-  outline: none;
 }
 
 .wrapper #section2 {
@@ -503,7 +505,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 
 .wrapper #section2 main .range-wrap .range-value {
   position: absolute;
-  z-index: 20;
+  z-index: 100;
   bottom: -1.8em;
   width: 1.62em;
   text-align: center;
@@ -561,6 +563,7 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   padding: .5em 2em;
   border-radius: 1em;
   background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
   color: white;
   background-color: #142426;
 }
@@ -658,6 +661,8 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
 
 .wrapper #section3 .container1 .accomodations div.nonselectable {
   pointer-events: none;
+  background-color: #8d9fa6;
+  opacity: .25;
 }
 
 .wrapper #section3 .container1 .accomodations div p {
