@@ -185,7 +185,6 @@ $(function () {
             $('.people').html(iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Nights')
         }
 
-        console.log(iPeople)
 
         $('.bookNow').on('click', function () {
             if (iPeople == 1) {
@@ -200,7 +199,6 @@ $(function () {
             }
         })
         slideUp.play()
-        console.log(iNights)
 
 
         //show sutiable options
@@ -474,7 +472,7 @@ $(function () {
             $(this).children("i").attr("class", "fas fa-minus")
         } else {
             $('.price').html('$' + (iRoomRate * iNights + iExtraDinner * iPeople))
-            $('.sExtraBreak').html('')
+            $('.sExtraBreak').html('no Extras')
             $(this).children("i").attr("class", "fas fa-plus")
             iExtraBreak = 0
         }
