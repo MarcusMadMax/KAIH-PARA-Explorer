@@ -356,11 +356,19 @@ section #cordrona .fas, section #duke .fas, section #hilton .fas, section #newOr
   font-weight: 700;
   letter-spacing: .2em;
   font-size: 2em;
+  margin-bottom: .1em;
+}
+
+.wrapper #section2 main h2 {
+  color: #142426;
+  font-size: 1.25em;
+  margin-bottom: .5em;
 }
 
 .wrapper #section2 main .card-container {
   width: 100vw;
   height: 25vh;
+  margin: 1em 0;
   padding: 0 5vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

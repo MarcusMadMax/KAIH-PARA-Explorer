@@ -455,13 +455,20 @@ section{
                 font-weight: 700;
                 letter-spacing: .2em;
                 font-size: 2em;
-                // margin-bottom: .1em;
+                margin-bottom: .1em;
+            }
+
+            h2{
+                color: $dark-grey;
+                font-size: 1.25em;
+                margin-bottom: .5em;
             }
 
             //Carousell--------------------------------------------------
             .card-container {
                 width: 100vw;
                 height: 25vh;
+                margin: 1em 0;
                 padding: 0 5vw;
                 box-sizing: border-box;
                 position: relative;

@@ -468,7 +468,7 @@ $(function () {
         if (iExtraBreak == 0) {
             iExtraBreak += parseInt($(this).val())
             sExtraBreak = $(this).attr('class')
-            $('.sExtraBreak').html(sExtraBreak + ' ' + '/')
+            $('.sExtraBreak').html(sExtraBreak + ' ')
             $('.iExtraBreak').html('$' + (iExtraBreak * iPeople))
             $('.price').html('$' + (iRoomRate * iNights + iExtraBreak * iPeople + iExtraDinner * iPeople))
             $(this).children("i").attr("class", "fas fa-minus")
