@@ -3,6 +3,7 @@ var iPeople = 1
 var iRoomRate = 0
 var iExtraBreak = 0
 var iExtraDinner = 0
+var sExtras = 'no Extras'
 var sExtraBreak = ''
 var sExtraDinner = ''
 var sRoom = ''
@@ -447,14 +448,16 @@ $(function () {
         if (iRoomRate == 0) {
             iRoomRate = parseInt($(this).val())
             sRoom = $(this).parent().siblings('h2').html()
-            $('.price').html('$' + (iRoomRate * iNights))
+            $('.price').append('$' + (iRoomRate * iNights))
             $('.iRoomRate').html('$' + (iRoomRate * iNights))
             $('.sRoom').html(sRoom)
             $(this).children("i").attr("class", "fas fa-minus")
         } else {
-            iRoomRate = 0
             $('.price').empty()
+            $('.sRoom').html('')
+            $('.iRoomRate').html('')
             $(this).children("i").attr("class", "fas fa-plus")
+            iRoomRate = 0
         }
 
     })
@@ -472,9 +475,10 @@ $(function () {
             $(this).children("i").attr("class", "fas fa-minus")
         } else {
             $('.price').html('$' + (iRoomRate * iNights + iExtraDinner * iPeople))
-            $('.sExtraBreak').html('no Extras')
+            $('.sExtraBreak').html('')
             $(this).children("i").attr("class", "fas fa-plus")
             iExtraBreak = 0
+            sExtraBreak = ''
         }
     })
 
@@ -491,6 +495,7 @@ $(function () {
             $('.sExtraDinner').html('')
             $(this).children("i").attr("class", "fas fa-plus")
             iExtraDinner = 0
+            sExtraDinner = ''
         }
     })
 
@@ -506,7 +511,18 @@ $(function () {
     $('.bookNow').on('click', function () {
         oBookNow.play()
         $('.iExtra').html('$' + (iExtraBreak + iExtraDinner) * iPeople)
-    })
+        if(sExtraBreak == '' && sExtraDinner == ''){
+            $('.sExtras').html('No Extras')
+        }
+        else{
+            $('.sExtras').html('')
+        }
+        if(sExtraBreak == 'Breakfast' && sExtraDinner == 'Dinner'){
+            $('.and').html('and ')
+        }else{
+            $('.and').html('')
+        }
+        })
 
     var backToBookings = anime({
         targets: '#section4',
