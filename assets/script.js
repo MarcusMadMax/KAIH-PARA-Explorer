@@ -448,7 +448,7 @@ $(function () {
         if (iRoomRate == 0) {
             iRoomRate = parseInt($(this).val())
             sRoom = $(this).parent().siblings('h2').html()
-            $('.price').append('$' + (iRoomRate * iNights))
+            $('.price').html('$' + (iRoomRate * iNights))
             $('.iRoomRate').html('$' + (iRoomRate * iNights))
             $('.sRoom').html(sRoom)
             $(this).children("i").attr("class", "fas fa-minus")
