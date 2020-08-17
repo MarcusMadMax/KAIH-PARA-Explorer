@@ -439,7 +439,7 @@ section{
             @include genericHeader;
         }
 
-        main{
+        .innersection{
             position: absolute;
             top: 0;
             left: 0;
@@ -800,7 +800,7 @@ section{
                 width: 100vw;
             }
 
-            main{
+            .innersection{
                 flex: 1 0 auto;
                 position: relative;
 
@@ -935,7 +935,7 @@ section{
             width: 100vw;
         }
 
-        main{
+        .innersection{
             position: relative;
 
             h3{
@@ -955,22 +955,25 @@ section{
                 color: $dark-grey;
                 line-height: 1.5em;
 
+                .stay{
+                    display: flex;
+                }
+
+                .confirmbookings{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: .5em 0;
+                }
+
                 .singlePeople, .singleNights{
-                    margin: 0 .5em;
+                    margin: 0 .25em;
                 }
 
                 .price{
                     color: $green-grey;
                     font-weight: 700;
                 }
-            }
-
-            .alignLeft{
-                float: left;
-            }
-
-            .alignRight{
-                float: right;
             }
 
             .container{
@@ -1035,7 +1038,7 @@ section{
                             width: 100%;
                         }
         
-                        #month, #year{
+                        #expirydate, #year{
                             background-image: linear-gradient(to bottom left, rgb(235, 234, 234), rgb(213, 213, 213));
                             font-size: 1.25em;
                             border: 1px solid $dark-grey;

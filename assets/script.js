@@ -177,26 +177,26 @@ $(function () {
 
     $('.explore').on('click', function () {
         if (iPeople == 1 && iNights == 1) {
-            $('.people').html(iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Night')
+            $('.people').html(' ' + iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Night') + ' '
         } else if (iPeople == 1 && iNights > 1) {
-            $('.people').html(iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Nights')
+            $('.people').html(' ' + iPeople + ' ' + ' Person ' + ' ' + iNights + ' ' + ' Nights' + ' ')
         } else if (iPeople > 1 && iNights == 1) {
-            $('.people').html(iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Night')
+            $('.people').html(' ' + iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Night' + ' ')
         } else {
-            $('.people').html(iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Nights')
+            $('.people').html(' ' + iPeople + ' ' + ' People ' + ' ' + iNights + ' ' + ' Nights' + ' ')
         }
 
 
         $('.bookNow').on('click', function () {
             if (iPeople == 1) {
-                $('.singlePeople').html( iPeople + ' ' + ' Person ')
+                $('.singlePeople').html(' ' + iPeople + ' ' + ' Person ' + ' ')
             } else {
-                $('.singlePeople').html( iPeople + ' ' + ' People ')
+                $('.singlePeople').html(' ' + iPeople + ' ' + ' People ' + ' ')
             }
             if (iNights == 1) {
-                $('.singleNights').html( iNights + ' ' + ' Night ')
+                $('.singleNights').html(' ' + iNights + ' ' + ' Night ' + ' ')
             } else {
-                $('.singleNights').html( iNights + ' ' + ' Nights ')
+                $('.singleNights').html(' ' + iNights + ' ' + ' Nights ' + ' ')
             }
         })
         slideUp.play()
@@ -324,7 +324,7 @@ $(function () {
         iPeople = parseInt(document.querySelector('.swiper-slide-active').innerHTML)
     })
 
-    $('span .singlePeople').html(iPeople)
+    $('span .singlePeople').html( ' ' + iPeople + ' ')
 
 
     //People swiper caption------------------------------

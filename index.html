@@ -86,14 +86,15 @@
                                 </div>
 
                                 <div class="formGroup password">
-                                    <label for="password"></label>
-                                    <input class="password" type="password" name="password" placeholder="Password">
+                                    <label for="signup-inpassword"></label>
+                                    <input class="password" id="signup-inpassword" type="password" name="password"
+                                        placeholder="Password">
                                 </div>
 
                                 <div class="formGroup passwor_conf">
                                     <label for="password_confirmation"></label>
-                                    <input class="password_confirmation" type="password" name="password_confirmation"
-                                        placeholder="Confirm Password">
+                                    <input class="password_confirmation" id="password_confirmation" type="password"
+                                        name="password_confirmation" placeholder="Confirm Password">
                                 </div>
                             </fieldset>
                         </form>
@@ -108,12 +109,14 @@
                             <fieldset>
                                 <div class="formGroup">
                                     <label for="username"></label>
-                                    <input class="username" type="text" name="username" placeholder="Username">
+                                    <input class="username" id="username" type="text" name="username"
+                                        placeholder="Username">
                                 </div>
 
                                 <div class="formGroup">
-                                    <label for="password"></label>
-                                    <input class="password" type="password" name="password" placeholder="Password">
+                                    <label for="login-password"></label>
+                                    <input class="password" id="login-password" type="password" name="password"
+                                        placeholder="Password">
                                 </div>
                                 <button type="submit" class="LogIn">Log in</button>
                             </fieldset>
@@ -132,7 +135,7 @@
                     <div class="pic"></div>
                 </div>
             </header>
-            <main>
+            <div class="innersection">
                 <h1>Start Exploring</h1>
                 <h2>Where would you like to go</h2>
 
@@ -183,7 +186,7 @@
                 </div>
                 <h6>Swipe to choose<br><i class="fas fa-hand-point-up"></i></h6>
                 <button class="explore">Explore</button>
-            </main>
+            </div>
         </section>
 
         <section id="section3">
@@ -191,7 +194,7 @@
                 <header>
                     <h2>Your Options</h2>
                 </header>
-                <main>
+                <div class="innersection">
                     <div class="accomodations">
                         <div class="hotel" data-price="100">
                             <p>Hotel</p>
@@ -206,7 +209,7 @@
                             <p>House</p>
                         </div>
                     </div>
-                </main>
+                </div>
                 <div class="contentIntro">
                     <div class="shape-wrap">
                         <svg class="shape" width="100%" height="100vh" preserveAspectRatio="none"
@@ -240,7 +243,7 @@
                         <p class="people"></p>
                     </div>
                 </header>
-                <main>
+                <div class="innersection">
                     <div class="options">
                         <h3>Hotels</h3>
                         <div class="option1 option">
@@ -313,15 +316,15 @@
                     <div class="extras">
                         <h3>Add extras</h3>
                         <div class="extra">
-                            <p id="breakfast">Breakfast $20 per person</p><button class="Breakfast" value="20"><i
+                            <p>Breakfast $20 per person</p><button class="Breakfast" value="20"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30 per person</p><button class="Dinner" value="30"><i
+                            <p>Dinner $30 per person</p><button class="Dinner" value="30"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                     </div>
-                </main>
+                </div>
                 <footer>
                     <p>Your price: <span class="price"></span></p>
                     <button class="bookNow">Book now</button>
@@ -343,7 +346,7 @@
                         <p class="people"></p>
                     </div>
                 </header>
-                <main>
+                <div class="innersection">
                     <div class="options">
                         <h3>Hostels</h3>
                         <div class="option1">
@@ -414,15 +417,15 @@
                     <div class="extras">
                         <h3>Add extras</h3>
                         <div class="extra">
-                            <p id="breakfast">Breakfast $20 per person</p><button value="20" class="Breakfast"><i
+                            <p>Breakfast $20 per person</p><button value="20" class="Breakfast"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30 per person</p><button value="30" class="Dinner"><i
+                            <p>Dinner $30 per person</p><button value="30" class="Dinner"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                     </div>
-                </main>
+                </div>
                 <footer>
                     <p>Your price: <span class="price"></span></p>
                     <button class="bookNow">Book now</button>
@@ -444,7 +447,7 @@
                         <p class="people"></p>
                     </div>
                 </header>
-                <main>
+                <div class="innersection">
                     <div class="options">
                         <h3>Motels</h3>
                         <div class="option1">
@@ -522,15 +525,15 @@
                     <div class="extras">
                         <h3>Add extras</h3>
                         <div class="extra">
-                            <p id="breakfast">Breakfast $20 per person</p><button class="Breakfast" value="20"><i
+                            <p>Breakfast $20 per person</p><button class="Breakfast" value="20"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30 per person</p><button class="Dinner" value="30"><i
+                            <p>Dinner $30 per person</p><button class="Dinner" value="30"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                     </div>
-                </main>
+                </div>
                 <footer>
                     <p>Your price: <span class="price"></span></p>
                     <button class="bookNow">Book now</button>
@@ -552,7 +555,7 @@
                         <p class="people"></p>
                     </div>
                 </header>
-                <main>
+                <div class="innersection">
                     <div class="options">
                         <h3>Houses</h3>
                         <div class="option1">
@@ -633,15 +636,15 @@
                     <div class="extras">
                         <h3>Add extras</h3>
                         <div class="extra">
-                            <p id="breakfast">Breakfast $20 per person</p><button class="Breakfast" value="20"><i
+                            <p>Breakfast $20 per person</p><button class="Breakfast" value="20"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                         <div class="extra">
-                            <p id="dinner">Dinner $30 per person</p><button class="Dinner" value="30"><i
+                            <p>Dinner $30 per person</p><button class="Dinner" value="30"><i
                                     class="fas fa-plus"></i></button>
                         </div>
                     </div>
-                </main>
+                </div>
                 <footer>
                     <p>Your price: <span class="price"></span></p>
                     <button class="bookNow">Book now</button>
@@ -660,26 +663,34 @@
                     <p class="people"></p>
                 </div>
             </header>
-            <main>
+            <div class="innersection">
                 <h3>Please confirm your booking</h3>
-                <ul id="bookingConfirm">
-                    <li class="alignLeft">Your stay</li>
-                    <li class="singlePeople alignLeft">People?</li>
-                    <Li class="singleNights alignLeft">Nights?</li><br>
-                    <li class="sRoom alignLeft"></li>
-                    <li class="iRoomRate alignRight">$ 0</li><br>
-                    <li class="alignLeft"><span class="sExtraBreak"></span><span class="and"></span><span class="sExtraDinner"></span></span><span class="sExtras"></span>
-                    <li class="iExtra alignRight">$ 0</li><br>
-                    <li class="alignLeft">Price total:</li>
-                    <li class="price alignRight">$ 0</li>
-                    <li style="clear: both;"></li>
-                </ul>
+                <div id="bookingConfirm">
+                    <div class="stay">
+                        <p>Your stay </p>
+                        <p class="singlePeople">People?</p>
+                        <p class="singleNights">Nights?</p>
+                    </div>
+                    <div class="confirmbookings">
+                        <p class="sRoom alignLeft">Hello</p>
+                        <p class="iRoomRate alignRight">$ 0</p>
+                    </div>
+                    <div class="confirmbookings">
+                        <p class="alignLeft"><span class="sExtraBreak"></span><span class="and"></span><span
+                                class="sExtraDinner"></span><span class="sExtras"></span></p>
+                        <p class="iExtra alignRight">$ 0</p>
+                    </div>
+                    <div class="confirmbookings">
+                        <p class="alignLeft pricetotal">Price total:</p>
+                        <p class="price alignRight">$ 0</p>
+                    </div>
+                </div>
                 <h3>Payment methods</h3>
                 <div class="container shadow">
                     <form action="#" method="POST" class="submit">
                         <div class="outerGroup owner">
                             <div class="formGroup">
-                                <label for="owner" id="label">Owner</label>
+                                <label for="owner">Owner</label>
                                 <input type="text" id="owner" name="owner" placeholder="Your name"
                                     onfocus="this.placeholder=''"
                                     onblur="this.placeholder='Please enter your card name'">
@@ -687,27 +698,27 @@
                         </div>
                         <div class="outerGroup cvv">
                             <div class="formGroup">
-                                <label for="cvv" id="label">CVV</label>
+                                <label for="cvv">CVV</label>
                                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
-                                <span id="monthMessage"></span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="outerGroup cardnumber">
                             <div class="formGroup">
-                                <label for="cardnumber" id="label">Card Number</label>
+                                <label for="cardnumber">Card Number</label>
                                 <input type="text" id="cardnumber" name="cardnumber" onkeydown="formatCreditCard()"
                                     placeholder="xxxx-xxxx-xxxx-xxxx" value="">
                             </div>
                         </div>
                         <div class="outerGroup expiry">
                             <label for="expirydate">Expiry date:</label>
-                            <select id="month" name="month">
+                            <select id="expirydate" name="month">
                                 <option value="">Month</option>
                                 <option value="january">January</option>
                                 <option value="february">February</option>
                                 <option value="march">March</option>
                             </select>
-                            <span id="monthMessage"></span>
+                            <span></span>
 
                             <select id="year" name="year">
                                 <option value="">Year</option>
@@ -733,7 +744,7 @@
                         </div>
                     </form>
                 </div>
-            </main>
+            </div>
             <footer>
                 ©BlackCirckle
             </footer>
